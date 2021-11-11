@@ -283,7 +283,7 @@ The goal of the exercise is to learn how to build a package and a distribution i
 
 ## Turn-in files
 ### Guidelines:
-A python package has to be constituted of the following files according to a similar file structure (one the two setup files is enough<>):
+A python package has to be constituted of the following files according to a similar file structure (one the two setup files is enough):
 ```
 ex02/
 ├─ LICENSE.txt      (mandatory for the exercise, recommended otherwise)
