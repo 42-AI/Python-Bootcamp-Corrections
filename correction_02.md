@@ -121,9 +121,10 @@ You can now copy paste the following bits of code into the python prompt in the 
   - Pass None as function parameter:
     - `ft_map(None, iterable)`: you should get the representation generator object id ("< generatortor object at hexa_adress>")
     - `list(ft_map(None, iterable))`: You should get a TypeError Exception.
-  - Pass None for as iterable parameter:
+  - Pass a non iterable as iterable parameter:
     - `ft_map(function, 2)`: you should get a TypeError Exception.
 
+<br/><br/>
 
 - ft_filter function:
   - Pass None as function parameter:
@@ -131,9 +132,8 @@ You can now copy paste the following bits of code into the python prompt in the 
     - `list(ft_filter(None, iterable))`: You should get a TypeError
   - Pass None for as iterable parameter:
     - `ft_filter(function, None)`: you should get a TypeError Exception.
-  - Pass a non iterable object (an integer for example):
-    - `ft_filter("Alice", iterable)`: you should get the representation generator object id ("< generatortor object at hexa_adress>")
-    - `list(ft_filter("Alice", iterable))`: you should get a TypeError Exception.
+  
+<br/><br/>
 
 - ft_reduce function:
   - Pass None as function parameter:
@@ -204,10 +204,10 @@ a very current one: "@log".
 ### Guidelines:
 Verify log decorator is correctly implemented:
 - It must be define in the same file.
-- The definition of log take only one parameter which is supposed to be a
+- The definition of log **takes only one parameter** which is supposed to be a
   function.
-- name is obtained via the function received as parameter (function.\_\_name__).
-- username is obtained via the environment variable (os.environ("USER")).
+- name is obtained via the function received as parameter (**function.\_\_name_**_).
+- username is obtained via the environment variable (**os.environ["USER"]**).
 
 ```bash
 python logger.py
@@ -261,7 +261,7 @@ if __name__ == "__main__":
 			print(reader.getheader(), end = "\n")
 			print(reader.getdata(), end = "\n\n")
 ```
-Put the files bad.csv and good.csv in the current folder then run
+Put the files bad.csv and good.csv in the current folder then run in terminal:
 ```bash
 python main.py good.csv
 # None
@@ -283,19 +283,19 @@ The goal of the exercise is to learn how to build a package and a distribution i
 
 ## Turn-in files
 ### Guidelines:
-A python package has to be constituted of the following files according to
-the file structure:
+A python package has to be constituted of the following files according to a similar file structure (one the two setup files is enough<>):
 ```
 ex02/
-├─ LICENSE.txt     (mandatory for the exercise, recommended otherwise)
+├─ LICENSE.txt      (mandatory for the exercise, recommended otherwise)
 ├─ pyproject.toml   (recommended)
 ├─ README.md        (mandatory for the exercise, recommended otherwise)
-├─ setup.cfg        (mandatory)
-├─ setup.py         (mandatory)
-├─ my_minipack/
-│   ├── __init__.py
-│   ├── logger.py
-│   └── progressbar.py
+├─ setup.cfg        (mandatory or setup.py)
+├─ setup.py         (mandatory or setup.cfg)
+├─ src/
+|  └───my_minipack/
+│      ├── __init__.py
+│      ├── logger.py
+│      └── progressbar.py
 └── tests/          (not asked here, recommended otherwise)
 ```
 
