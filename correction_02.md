@@ -161,7 +161,7 @@ You can now copy paste the following bits of code into the python prompt in the 
     # You should get a TypeError Exception
     ```
     
-      ```python
+    ```python
     ft_reduce(function, [])
     # you should get a TypeError Exception.
     ```
