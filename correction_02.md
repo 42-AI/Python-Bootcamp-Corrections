@@ -312,6 +312,7 @@ find . -name "*.whl"
 find . -name "*.tar.gz"
 ```
 if any files are found delete them (make sure you are in the ex04 folder)
+
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -322,6 +323,9 @@ Now the defendee should be able to install his package in a few lines.
 pip list | grep minipack
 # my-minipack        1.0.0
 ```
+     
+
+you should now be able to import your package !
 
 ```bash
 python
