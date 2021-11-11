@@ -201,7 +201,7 @@ The goal of the exercise is to tackle the notion inheritance of class.
       is_alive, for example:
       `luigi = GotCharacter("Name", True)`
        Verify that the GotCharacter instance is alive and it's name.
-    - Check the presence of the docstring  `print(luigi.__doc__)` (Some python setting can make this return None, if thats the case, go check in the code for an explanative text below `def GotCharacter():`)
+    - Check the presence of the docstring  `print(luigi.\_\_doc\_\_)` (Some python setting can make this return None, if thats the case, go check in the code for an explanative text below `def GotCharacter():`)
      
     - Verify that the GotCharacter instance has no attributes 'house_words'
     or 'family_name' (of course you should not be able to call print_house_words()
@@ -211,7 +211,7 @@ The goal of the exercise is to tackle the notion inheritance of class.
       - Creates an instance of the children class and checks:
         `arya = Stark("Arya")`
       - Check the presence of the docstring
-        `print(arya.__doc__)`
+        `print(arya.\_\_doc\_\_)`
       - Verify all the attributes of the character
       - Verify that the methods associated to the character object
       - Use the method die() and verify the value of is_alive
@@ -225,7 +225,7 @@ The goal of the exercise is to get you used with built-in methods,
 more particularly with those allowing to perform operations.
 Student is expected to code built-in methods for vector-vector and
 vector-scalar operations as rigorously as possible.
-Concerning the __str__ and __repr__ you have the opportunity to observe
+Concerning the \_\_str\_\_ and \_\_repr\_\_ you have the opportunity to observe
 their behaviors through the tests.
 
 ## Questions:
@@ -234,13 +234,13 @@ their behaviors through the tests.
   First, verifiy all the expected built-in methods are implemented, and
   then printing a vector you observe an output similar to:\
     ```(Vector [n1, ..., n2])```\
-  You can note that clever implementation may used __add__ method within
-  _radd_, __sub__ and __rsub__. Nethertheless it is perfectly fine if it is
+  You can note that clever implementation may used \_\_add\_\_ method within
+  _radd_, \_\_sub\_\_ and \_\_rsub\_\_. Nethertheless it is perfectly fine if it is
   not the case.
 
-- name: 'built-in method __init__'\
+- name: 'built-in method \_\_init\_\_'\
   **guidelines:** \
-  Verify the correct implementation of the __init__ method:
+  Verify the correct implementation of the \_\_init\_\_ method:
   Create multiple instances of Vector class according to the different
   possibilities and verify if the values and shape are correct:
   - ```python
@@ -282,10 +282,10 @@ their behaviors through the tests.
     ```
 
 
-- name: 'built-in method __mul__ and __rmul__'\
+- name: 'built-in method \_\_mul\_\_ and \_\_rmul\_\_'\
   **guidelines:** \
-  Verify the correct implementation of the built-in method __mul__ and
-  __rmul__ by	performing several tests related to '*' operator:
+  Verify the correct implementation of the built-in method \_\_mul\_\_ and
+  \_\_rmul\_\_ by	performing several tests related to '*' operator:
     ```python
     v = Vector(4)
     print(v.values)
@@ -298,10 +298,10 @@ their behaviors through the tests.
     # The error should be handled, it should say raise SomeError in the code or print a message and return None or exit().
     ```
 
-- name: 'built-in method __add__, __radd__, __sub__ and __rsub__'\
+- name: 'built-in method \_\_add\_\_, \_\_radd\_\_, \_\_sub\_\_ and \_\_rsub\_\_'\
   **guidelines:** \
-  Verify the correct implementation of the built-in method __add__,
-  __radd__, __sub__ and __rsub__ by performing several tests related
+  Verify the correct implementation of the built-in method \_\_add\_\_,
+  \_\_radd\_\_, \_\_sub\_\_ and \_\_rsub\_\_ by performing several tests related
   to '+' and '-' operators:
   For each test verify that the result of the operation is a vector object or a scalar,
   and if it's value is correct.
@@ -326,9 +326,9 @@ their behaviors through the tests.
     ```
 
         
-Perform the same kind of tests (at least the same tests) for __sub__ and __rsub__.
+Perform the same kind of tests (at least the same tests) for \_\_sub\_\_ and \_\_rsub\_\_.
 
-- name: 'built-in method __div__ and __rdiv__'\
+- name: 'built-in method \_\_div\_\_ and \_\_rdiv\_\_'\
   **guidelines:**\
   For division perform the following tests:
   - 'Vector(m) / 2'
@@ -420,9 +420,9 @@ In this exercise you learn how to modify or add attributes to an object.
     - First, you have to check the classes implementation, meaning that you
       have to check the presence of:
       - the class Account and Bank in the file bank.py
-      - the methods' __init__', 'transfer' and the attribute 'ID_COUNT' in
+      - the methods' \_\_init\_\_', 'transfer' and the attribute 'ID_COUNT' in
         the class Account.
-      - the methods '__init__', 'add', 'transfer' and 'fix_account' in the
+      - the methods '\_\_init\_\_', 'add', 'transfer' and 'fix_account' in the
         class Bank.
         Student may have implement extra methods to manage the security
         aspect, thus it is okay to have more than the methods mentionned.
