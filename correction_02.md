@@ -259,6 +259,7 @@ Verify the different methods are implemented:
 - getdata(self)
 - getheader(self)
 
+**Ask the defendee to explain the \_\_func\_\_ functions to you.**
 
 
 ## Basic tests
