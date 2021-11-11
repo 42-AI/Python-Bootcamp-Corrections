@@ -118,11 +118,11 @@ iterable = [1, 2, 3]
 ```
 You can now copy paste the following bits of code into the python prompt in the terminal.
 - map function:
-     ```python
-    ft_map(function_to_apply = None, iterable = iterable)
+	 ```python
+	ft_map(function_to_apply = None, iterable = iterable)
 	# "< generatortor object at hexa_adress>"
 	```
-    ```python
+	```python
 	list(ft_map(function_to_apply = None, iterable = iterable))
 	# You should get a TypeError Exception
 	```
@@ -135,11 +135,11 @@ You can now copy paste the following bits of code into the python prompt in the 
 <br/><br/>
 
 - ft_filter function:
-    ```python
-    ft_filter(function_to_apply = None, iterable = iterable)
+	```python
+	ft_filter(function_to_apply = None, iterable = iterable)
 	# "< generatortor object at hexa_adress>"
 	```
-    ```python
+	```python
 	list(ft_filter(function_to_apply = None, iterable = iterable))
 	# You should get a TypeError Exception
 	```
@@ -152,11 +152,11 @@ You can now copy paste the following bits of code into the python prompt in the 
 <br/><br/>
 
 - ft_reduce function:
-    ```python
-    ft_reduce(None, iterable = iterable)
+	```python
+	ft_reduce(None, iterable = iterable)
 	# you should get a TypeError Exception
 	```
-    ```python
+	```python
 	ft_reduce(function, None)
 	# You should get a TypeError Exception
 	```
@@ -342,12 +342,13 @@ python3 -m venv venv
 source venv/bin/activate
 bash build.sh
 ```
-Now the defendee should be able to install his package in a few lines.
+**Now the defendee should tell you how to install his package in a few lines.**
+
 ```bash
 pip list | grep minipack
 # my-minipack        1.0.0
 ```
-     
+	 
 
 you should now be able to import your package !
 
