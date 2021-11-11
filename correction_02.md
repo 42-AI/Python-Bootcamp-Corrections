@@ -117,7 +117,7 @@ function = lambda x: x + 1
 iterable = [1, 2, 3]
 ```
 You can now copy paste the following bits of code into the python prompt in the terminal.
-- map function:
+- **ft_map function**:
      ```python
     ft_map(function_to_apply = None, iterable = iterable)
     ```
@@ -134,7 +134,7 @@ You can now copy paste the following bits of code into the python prompt in the 
 
 <br/><br/>
 
-- ft_filter function:
+- **ft_filter function**:
     ```python
     ft_filter(function_to_apply = None, iterable = iterable)
     ```
@@ -152,7 +152,7 @@ You can now copy paste the following bits of code into the python prompt in the 
 
 <br/><br/>
 
-- ft_reduce function:
+- **ft_reduce function**:
     ```python
     ft_reduce(None, iterable = iterable)
     ```
