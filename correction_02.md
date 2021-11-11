@@ -251,14 +251,6 @@ Verify the different methods are implemented:
 - getheader(self)
 
 
-## Errors management
-### Guidelines:
-Perform the following tests. They should be handled properly:
-- the file given does not exists: should return None.
-- the file has inconsistent number of fields
-  (number of columns in header != number of columns in data).
-- All lines do not have the same number of columns.
-
 
 ## Basic tests
 ### Guidelines:
@@ -272,14 +264,14 @@ if __name__ == "__main__":
 	filename = sys.argv[1]
 	with CsvReader(filename, skip_top=18, skip_bottom=0) as reader:
 		if reader == None:
-			print("File is corrupted")
+			print("File is corrupted or missing")
 		else:
 			print(reader.getheader(), end = "\n")
 			print(reader.getdata(), end = "\n\n")
 
 	with CsvReader(filename, header = True, skip_top=17, skip_bottom=0) as reader:
 		if reader == None:
-			print("File is corrupted")
+			print("File is corrupted or missing")
 		else:
 			print(reader.getheader(), end = "\n")
 			print(reader.getdata(), end = "\n\n")
@@ -293,12 +285,20 @@ python main.py good.csv
 #['Name', '     "Sex"', ' "Age"', ' "Height (in)"', ' "Weight (lbs)"']
 #[['Ruth', '       "F"', '   28', '       65', '      131']]
 ```
-```bash
-python test.py bad.csv
-# File is corrupted
-# File is corrupted
-```
 The appearance of the output may vary slightly but the content and number of lines must be the same as the output above.
+```bash
+python main.py bad.csv
+# File is corrupted or missing
+# File is corrupted or missing
+```
+
+```bash
+python main.py unicorn.csv
+# File is corrupted or missing
+# File is corrupted or missing
+```
+Additional error messages may print no python messages containing `Traceback` (these indicate a crash of the python interpreter even though the python console keeps running in the terminal) 
+
 
 
 # Exercise 4: MiniPack
