@@ -109,8 +109,7 @@ The goal of the exercise is to get you familiar with the notions of
 classes and the manipulation of the objects related to those classes.
 
 ## Questions:
-- name: 'Error management and basic tests'\
-  **guidelines:**\
+- **'Error management and basic tests'**\
   There are 2 classes, Book in book.py and Recipe in recipe.py.
   A Book object stores and manages Recipe.
   With the help of the test.py file, carry out at least the following tests
@@ -187,8 +186,7 @@ classes and the manipulation of the objects related to those classes.
 The goal of the exercise is to tackle the notion inheritance of class.
 
 ## Questions:
-  - name: 'notion of class'\
-    **guidelines:**\
+  - **Notion of class**\
     The exercise shows an example of inheritance of a class from a parent class.
     - Verify the implementation of the differents classes (GotCharacter and
       the children), parent should contains the attributes 'first_name' and
@@ -207,7 +205,7 @@ The goal of the exercise is to tackle the notion inheritance of class.
     or 'family_name' (of course you should not be able to call print_house_words()
     or the die() neither)
     
-    - children class
+    - **children class**
       - Creates an instance of the children class and checks:
         `arya = Stark("Arya")`
       - Check the presence of the docstring
@@ -229,8 +227,7 @@ Concerning the \_\_str\_\_ and \_\_repr\_\_ you have the opportunity to observe
 their behaviors through the tests.
 
 ## Questions:
-- name: 'Implementation of built-in methods'\
-  **guidelines:** \
+- **Implementation of built-in methods**\
   First, verifiy all the expected built-in methods are implemented, and
   then printing a vector you observe an output similar to:\
     ```(Vector [n1, ..., n2])```\
@@ -238,8 +235,7 @@ their behaviors through the tests.
   _radd_, \_\_sub\_\_ and \_\_rsub\_\_. Nethertheless it is perfectly fine if it is
   not the case.
 
-- name: 'built-in method \_\_init\_\_'\
-  **guidelines:** \
+- **built-in method \_\_init\_\_**   
   Verify the correct implementation of the \_\_init\_\_ method:
   Create multiple instances of Vector class according to the different
   possibilities and verify if the values and shape are correct:
@@ -282,8 +278,7 @@ their behaviors through the tests.
     ```
 
 
-- name: 'built-in method \_\_mul\_\_ and \_\_rmul\_\_'\
-  **guidelines:** \
+- **built-in methods \_\_mul\_\_ and \_\_rmul\_\_**  
   Verify the correct implementation of the built-in method \_\_mul\_\_ and
   \_\_rmul\_\_ by	performing several tests related to '*' operator:
     ```python
@@ -298,8 +293,7 @@ their behaviors through the tests.
     # The error should be handled, it should say raise SomeError in the code or print a message and return None or exit().
     ```
 
-- name: 'built-in method \_\_add\_\_, \_\_radd\_\_, \_\_sub\_\_ and \_\_rsub\_\_'\
-  **guidelines:** \
+- **built-in method \_\_add\_\_, \_\_radd\_\_, \_\_sub\_\_ and \_\_rsub\_\_**\
   Verify the correct implementation of the built-in method \_\_add\_\_,
   \_\_radd\_\_, \_\_sub\_\_ and \_\_rsub\_\_ by performing several tests related
   to '+' and '-' operators:
@@ -325,17 +319,13 @@ their behaviors through the tests.
     # True
     ```
 
-        
-Perform the same kind of tests (at least the same tests) for \_\_sub\_\_ and \_\_rsub\_\_.
-
-- name: 'built-in method \_\_div\_\_ and \_\_rdiv\_\_'\
-  **guidelines:**\
+- **built-in method \_\_div\_\_ and \_\_rdiv\_\_**\
   For division perform the following tests:
-  - 'Vector(m) / 2'
-  - 'Vector(m) / 3.14'
-  - 'Vector(m) / 0'
+  - 'Vector(4) / 2'
+  - 'Vector(4) / 3.14'
+  - 'Vector(4) / 0'
     An error should be displayed, and properly handled.
-  - 'Vector(m) / None' and 'None / Vector(m)'
+  - 'Vector(4) / None' and 'None / Vector(4)'
     An error should be displayed, and properly handled
   - 3 / Vector(3) shoud raise an error or the choice of behaviour must be justifiable
     as multiple mathematical definitions of division by a vector exist.
@@ -347,8 +337,7 @@ in Python, throught the implementation of a function 'generator' which
 performs a splitting operation and an ordering class operation.
 
 ## Questions:
-- name: 'Error managament and basic tests'\
-  **guidelines:**
+- **Error managament and basic tests**
   - First, check the implementation of the function (all behaviors are
   implemented: 'shuffle', 'ordered' and 'unique').
   - Verify the following cases are correctly managed and the message "ERROR"
@@ -392,8 +381,8 @@ tuples, dictionnaries (iterable class objects more generally) named
 zip and enumerate.
 
 ## Questions:
-- name: 'Error managament and basic tests'\
-  **guidelines:**
+- **Error managament and basic tests**
+
   - First, check that the implementation of the class and methods.
     You must find 'zip' in the method 'zip_evaluate' and 'enumerate'
     in 'enumerate_evaluate' and no while loop. It is a normal implementation
@@ -415,8 +404,7 @@ of possibility to modify instanced objects.
 In this exercise you learn how to modify or add attributes to an object.
 
 ## Questions:
-  - name: 'Error managament and basic tests'\
-    **guidelines:**
+  - **Error managament and basic tests**   
     - First, you have to check the classes implementation, meaning that you
       have to check the presence of:
       - the class Account and Bank in the file bank.py
@@ -429,8 +417,8 @@ In this exercise you learn how to modify or add attributes to an object.
 
     - Second, you have to perform the following test to verify the security
       management:
-      - `bank1.add(account1)`
-        where 'bank1' is an instance of Bank and 'account1' is a instance of
+      - `bank.add(account)`
+        where 'bank' is an instance of Bank and 'account1' is a instance of
         Account which is considered as corrupted. Try several cases of corrupted
         account:
         ***if the Bank.add(account) funtion does not check for corrupted accounts simply verify that the function to check for corruption works***
