@@ -118,7 +118,7 @@ iterable = [1, 2, 3]
 ```
 You can now copy paste the following bits of code into the python prompt in the terminal.
 - map function:
-	 ```python
+	```python
 	ft_map(function_to_apply = None, iterable = iterable)
 	# "< generatortor object at hexa_adress>"
 	```
