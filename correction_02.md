@@ -262,12 +262,17 @@ if __name__ == "__main__":
 ```
 Put the files bad.csv and good.csv in the current folder then run
 ```bash
-python test.py good.csv
+python main.py good.csv
 # None
 # [['Ruth', '       "F"', '   28', '       65', '      131']]
 
 #['Name', '     "Sex"', ' "Age"', ' "Height (in)"', ' "Weight (lbs)"']
 #[['Ruth', '       "F"', '   28', '       65', '      131']]
+```
+```bash
+python test.py bad.csv
+# File is corrupted
+# File is corrupted
 ```
 The appearance of the output may vary slightly but the content and number of lines must be the same as the output above.
 
@@ -314,6 +319,14 @@ bash build.sh
 ```
 Now the defendee should be able to install his package in a few lines.
 ```bash
-pip list
+pip list | grep minipack
+# my-minipack        1.0.0
 ```
 
+```bash
+python
+```
+```python
+import my_minipack.progressbar
+import my_minipack.logger
+```
