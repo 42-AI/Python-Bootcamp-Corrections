@@ -120,51 +120,54 @@ You can now copy paste the following bits of code into the python prompt in the 
 - map function:
      ```python
     ft_map(function_to_apply = None, iterable = iterable)
-    # "< generatortor object at hexa_adress>"
     ```
+    Should print "< generator object at hexa_adress>"
      ```python
     list(ft_map(function_to_apply = None, iterable = iterable))
-    # You should get a TypeError Exception
     ```
+    You should get a TypeError Exception
     
      ```python
     ft_map(function, 2)
-    # you should get a TypeError Exception.
     ```
+    you should get a TypeError Exception.
 
 <br/><br/>
 
 - ft_filter function:
     ```python
     ft_filter(function_to_apply = None, iterable = iterable)
-    # "< generatortor object at hexa_adress>"
     ```
+    Should print < generator object at hexa_adress>
+
     ```python
     list(ft_filter(function_to_apply = None, iterable = iterable))
-    # You should get a TypeError Exception
     ```
+    You should get a TypeError Exception
     
     ```python
     ft_filter(function, None)
-    # you should get a TypeError Exception.
     ```
+    You should get a TypeError Exception.
 
 <br/><br/>
 
 - ft_reduce function:
     ```python
     ft_reduce(None, iterable = iterable)
-    # you should get a TypeError Exception
     ```
+    You should get a TypeError Exception
+
     ```python
     ft_reduce(function, None)
-    # You should get a TypeError Exception
     ```
+    You should get a TypeError Exception
     
     ```python
     ft_reduce(function, [])
-    # you should get a TypeError Exception.
     ```
+    You should get a TypeError Exception.
+
 
 ## Basic tests:
 ### Guidelines:
