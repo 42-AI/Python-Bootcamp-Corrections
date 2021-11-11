@@ -103,12 +103,12 @@ The goal of the exercise is to work on the built-in functions `map`, `filter` an
 
 ## Errors management:
 ### Guidelines:
-Perform the following tests, you should observed a raised error for each case:
-To perform these tests run
+each case:    
+Launch python from the terminal:
 ```bash
-python -i
+python3 -i
 ```
-Then import the functions
+Then import the functions in the python prompt
 ```python
 from ft_filter import ft_filter
 from ft_map import ft_map
@@ -116,7 +116,7 @@ from ft_reduce import ft_reduce
 function = lambda x: x + 1
 iterable = [1, 2, 3]
 ```
-You can now copy paste the following bits of code into the terminal.
+You can now copy paste the following bits of code into the python prompt in the terminal.
 - ft_map function:
   - Pass None as function parameter:
     - `ft_map(None, iterable)`: you should get the representation generator object id ("< generatortor object at hexa_adress>")
@@ -140,7 +140,8 @@ You can now copy paste the following bits of code into the terminal.
     - `ft_reduce(None, iterable)`: you should get a TypeError Exception.
   - Pass None as iterable parameter:
     - `ft_reduce(function, None)`: you should get a TypeError Exception.
-  - ` ft_reduce(function, [])`: you should get a TypeError Exception
+  - Pass an empty array as iterable
+    - ` ft_reduce(function, [])`: you should get a TypeError Exception
 
 ## Basic tests:
 ### Guidelines:
