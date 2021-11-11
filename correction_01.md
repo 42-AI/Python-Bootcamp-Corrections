@@ -389,7 +389,7 @@ In this exercise you learn how to modify or add attributes to an object.
         where 'bank1' is an instance of Bank and 'account1' is a instance of
         Account which is considered as corrupted. Try several cases of corrupted
         account:
-        if the Bank.add(account) funtion does not check for corrupted accounts simply verify that the function to check for corruption works
+        ***if the Bank.add(account) funtion does not check for corrupted accounts simply verify that the function to check for corruption works***
         ```python
         from the_bank import Account, Bank
 

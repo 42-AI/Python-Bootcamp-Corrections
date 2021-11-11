@@ -105,11 +105,11 @@ The goal of the exercise is to work on the built-in functions `map`, `filter` an
 ### Guidelines:
 Perform the following tests, you should observed a raised error for each case:
 To perform these tests run
-```
+```bash
 python -i
 ```
 Then import the functions
-```
+```python
 from ft_filter import ft_filter
 from ft_map import ft_map
 from ft_reduce import ft_reduce
@@ -171,34 +171,30 @@ python -i main.py
 - With None as unique parameter:
   ```python
   obj = what_are_the_vars(None)
-  doomprinter(obj)
+  doom_printer(obj)
+
   # var_0: None
   # end
   ```
-- With 2 None as parameters:
-  ```
-  obj = what_are_the_vars(None, None)
-  doomprinter(obj)
-  ```
-  You should get as output:
-  ```
-  var_0: None
-  var_1: None
-  end
-  ```
+
 - With a function as argument and a function as keyword argument:
-  ```
+  ```python
   obj = what_are_the_vars(lambda x: x, function=what_are_the_vars)
-  doomprinter(obj)
-  ```
-  You should get as output:
-  ```
-  function: <function what_are_the_vars at 0x...>
-  var_0: <function <lambda> at 0x...>
-  end
+  doom_printer(obj)
+
+  # function: <function what_are_the_vars at 0x...>
+  # var_0: <function <lambda> at 0x...>
+  # end
   ```
 
-    
+- With a kwarg named var_0:
+  ```python
+  obj = what_are_the_vars(3, var_0=2)
+  doom_printer(obj)
+
+  # ERROR
+  # end
+  ```
 # Exercise 2: the logger
 The goal of the exercise is to discover the decorator in Python and work with
 a very current one: "@log".
@@ -209,23 +205,24 @@ Verify log decorator is correctly implemented:
 - It must be define in the same file.
 - The definition of log take only one parameter which is supposed to be a
   function.
-- name is obtained via the function received as parameter (function.__name__).
+- name is obtained via the function received as parameter (function.\_\_name__).
 - username is obtained via the environment variable (os.environ("USER")).
 
-Verify the logger.py have the same output as the one expected (see the subject):
+```bash
+python logger.py
+```
+Verify the machine.log contains:
 (<login>)Running: <Instruction>    [ exec-time = <XXX> <ms\s> ]
 
-Feel free to perform additional tests (by adding or removing call to
-methods of CoffeMachine instance int the main part of the script).
 
 
 # Exercise 3: Json issues
 ## Implementation
 ### Guidelines:
 Verify the different methods are implemented:
-- __init__(self, filename=None, sep=',', header=False, skip_top=0, skip_bottom=0)
-- __enter__(self)
-- __exit__(self, type, value, traceback)
+- \_\_init__(self, filename=None, sep=',', header=False, skip_top=0, skip_bottom=0)
+- \_\_enter__(self)
+- \_\_exit__(self, type, value, traceback)
 - getdata(self)
 - getheader(self)
 
@@ -241,13 +238,38 @@ Perform the following tests. They should be handled properly:
 
 ## Basic tests
 ### Guidelines:
-Perform the following tests. They should work and give correct results:
-- CSV files with and without header (test the header parameter).
-- CSV files with different separator (sep = ',' ';' ':' ...).
-- when the skips are set, the getdata collects the corresponding lines.
-- getdata allows us to retrieve the csv content.
-- getheader allows us to retrieve the csv header
-(being a list of str or None depending of the boolean value when instanced).
+Perform the following tests. They should work and give correct results.
+Create a file called main.py and copy the following code in that file.
+```python
+from csvreader import CsvReader
+import sys 
+
+if __name__ == "__main__":
+	filename = sys.argv[1]
+	with CsvReader(filename, skip_top=18, skip_bottom=0) as reader:
+		if reader == None:
+			print("File is corrupted")
+		else:
+			print(reader.getheader(), end = "\n")
+			print(reader.getdata(), end = "\n\n")
+
+	with CsvReader(filename, header = True, skip_top=17, skip_bottom=0) as reader:
+		if reader == None:
+			print("File is corrupted")
+		else:
+			print(reader.getheader(), end = "\n")
+			print(reader.getdata(), end = "\n\n")
+```
+Put the files bad.csv and good.csv in the current folder then run
+```bash
+python test.py good.csv
+# None
+# [['Ruth', '       "F"', '   28', '       65', '      131']]
+
+#['Name', '     "Sex"', ' "Age"', ' "Height (in)"', ' "Weight (lbs)"']
+#[['Ruth', '       "F"', '   28', '       65', '      131']]
+```
+The appearance of the output may vary slightly but the content and number of lines must be the same as the output above.
 
 
 # Exercise 4: MiniPack
@@ -273,20 +295,25 @@ ex02/
 
 First, check the different files in the directory. License, README,
 setup.py and setup.cfg files must be present and a directory containing the sources.
-In the sources directory you should have 3 python files:
+In the sources directory you should have 3 python files (*names may not be exactly the same*):
 - __init__.py
 - logger.py
 - progressbar.py
-
 ## Build script
 ### Guidelines:
-Run the command 'bash build.sh' .
-- Does the packages wheel, pip and setuptools are upgraded (`pip list`)?
-- Is the package my_minipack is installed ? You should observed the command line
-`python -m setup.py sdist bdist_wheel` in the build.sh script.
+Begin by running:
+```bash
+find . -name "*.whl"
+find . -name "*.tar.gz"
+```
+if any files are found delete them (make sure you are in the ex04 folder)
+```bash
+python3 -m venv venv
+source venv/bin/activate
+bash build.sh
+```
+Now the defendee should be able to install his package in a few lines.
+```bash
+pip list
+```
 
-Check the metadata with `pip show -v my_minipack`. You should observed:
-- name and version of the package
-- author information (name and email)
-- License and summary
-- Intended audience and Topic items in the classifiers
