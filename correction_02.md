@@ -117,31 +117,54 @@ function = lambda x: x + 1
 iterable = [1, 2, 3]
 ```
 You can now copy paste the following bits of code into the python prompt in the terminal.
-- ft_map function:
-  - Pass None as function parameter:
-    - `ft_map(None, iterable)`: you should get the representation generator object id ("< generatortor object at hexa_adress>")
-    - `list(ft_map(None, iterable))`: You should get a TypeError Exception.
-  - Pass a non iterable as iterable parameter:
-    - `ft_map(function, 2)`: you should get a TypeError Exception.
+- map function:
+     ```python
+    ft_map(function_to_apply = None, iterable = iterable)
+	# "< generatortor object at hexa_adress>"
+	```
+    ```python
+	list(ft_map(function_to_apply = None, iterable = iterable))
+	# You should get a TypeError Exception
+	```
+	
+  	```python
+	ft_map(function, 2)
+	# you should get a TypeError Exception.
+	```
 
 <br/><br/>
 
 - ft_filter function:
-  - Pass None as function parameter:
-    - `ft_filter(None, iterable)`: you should get the representation generator object id ("< generatortor object at hexa_adress>")
-    - `list(ft_filter(None, iterable))`: You should get a TypeError
-  - Pass None for as iterable parameter:
-    - `ft_filter(function, None)`: you should get a TypeError Exception.
-  
+    ```python
+    ft_filter(function_to_apply = None, iterable = iterable)
+	# "< generatortor object at hexa_adress>"
+	```
+    ```python
+	list(ft_filter(function_to_apply = None, iterable = iterable))
+	# You should get a TypeError Exception
+	```
+	
+  	```python
+	ft_filter(function, None)
+	# you should get a TypeError Exception.
+	```
+
 <br/><br/>
 
 - ft_reduce function:
-  - Pass None as function parameter:
-    - `ft_reduce(None, iterable)`: you should get a TypeError Exception.
-  - Pass None as iterable parameter:
-    - `ft_reduce(function, None)`: you should get a TypeError Exception.
-  - Pass an empty array as iterable
-    - ` ft_reduce(function, [])`: you should get a TypeError Exception
+    ```python
+    ft_reduce(None, iterable = iterable)
+	# you should get a TypeError Exception
+	```
+    ```python
+	ft_reduce(function, None)
+	# You should get a TypeError Exception
+	```
+	
+  	```python
+	ft_reduce(function, [])
+	# you should get a TypeError Exception.
+	```
 
 ## Basic tests:
 ### Guidelines:
