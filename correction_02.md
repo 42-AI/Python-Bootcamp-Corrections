@@ -195,32 +195,38 @@ The goal of the exercise is to discover and manipulate `*args` and `**kwargs`.
 ```
 python -i main.py
 ```
-- With None as unique parameter:
+- **With None as unique parameter**:
   ```python
   obj = what_are_the_vars(None)
   doom_printer(obj)
-
-  # var_0: None
-  # end
+  ```
+  Shoud print:
+  ```
+  var_0: None
+  end
   ```
 
-- With a function as argument and a function as keyword argument:
+- **With a function as argument and a function as keyword argument**:
   ```python
   obj = what_are_the_vars(lambda x: x, function=what_are_the_vars)
   doom_printer(obj)
-
-  # function: <function what_are_the_vars at 0x...>
-  # var_0: <function <lambda> at 0x...>
-  # end
+  ```
+  Shoud print:
+  ```
+  function: <function what_are_the_vars at 0x...>
+  var_0: <function <lambda> at 0x...>
+  end
   ```
 
-- With a kwarg named var_0:
+- **With a kwarg named var_0**:
   ```python
   obj = what_are_the_vars(3, var_0=2)
   doom_printer(obj)
-
-  # ERROR
-  # end
+  ```
+  Shoud print:
+  ```
+  ERROR
+  end
   ```
 # Exercise 2: the logger
 The goal of the exercise is to discover the decorator in Python and work with
