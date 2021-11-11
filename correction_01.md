@@ -116,27 +116,71 @@ classes and the manipulation of the objects related to those classes.
   With the help of the test.py file, carry out at least the following tests
   to try to stress the error management:
 
-  - Recipe:\
-   Initialize a Recipe object with valid and invalid parameters, the Recipe should be created or an error message should be printed.
-    - Book:
-      - Verify also for Book instance the validity of the initialization with
-        valid and incorrect parameters
-      - After the initialization of a correct Book object, verify:
-        - creation_date and last_update have the same value or last_update is set to None      
-                                   
-        - get_recipe_by_name()
-          - Give an existing recipe name as parameter, the function must printed it and
-            returned an instance of it.
-          - Give a non existing recipe name as parameter, the function must declare
-            an error and handle it correctly. Verify also that 'last_update'
-            did not change.
-        - get_recipes_by_types()
-          - With an correct type (with at least a recipe), the function must
-            print all the recipes which match the type.
-          - With a correct type which exists but being empty. This case must be handled properly
-          - Verify also 'last_update' did not change
-          - With a non existing recipe type, the function must declare an
-            error and handle it correctly. Returning an empty array is also acceptable.
+	In the terminal:
+	```bash
+	python3
+	```
+	```python
+	from book import Book
+	from recipe import Recipe
+	```
+  - ## Recipe:
+	```python
+	Recipe("cooki", 0, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
+	# Should print an error because cooking_lvl < 1
+
+	Recipe("cooki", 1.5, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
+	# Should print an error because cooking_lvl is not an int
+	# OR
+	# cooking lvl should be converted to an int somewhere
+
+	Recipe("cooki", 1, 10, [], "deliciousness incarnate", "dessert")
+	# Should print an error because empty ingredients
+
+	Recipe("cooki", 1, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
+	print("Congratulations you finally made sime delicous cookies")
+	```
+  - ## Book:
+  - After the initialization of a correct Book object, verify:
+	```python
+	b = Book("My seductive recipes")
+	print(b.creation_date)
+	# should be the current date and time
+	print(b.last_update)
+	# should be the same as the creation date or None
+	```                    
+  - **get_recipe_by_name()** tests:
+	```python
+	crumble = Recipe("Crumble" , 1, 25, ["apples", "flour", "sugar"], "dessert" ,"delicious")
+	b.add_recipe(crumble)
+	print(b.last_update)
+	# Should be different than the previous one
+
+	b.get_recipe_by_name("Crumble")
+	# should print the recipe
+	# AND
+	# <Recipe object at x>
+
+	b.get_recipe_by_name("Liver Icecream")
+	# The recipe does not exist
+	# The error must be handled in a justifiable manner
+	# such as returning None, [], or printing an error message
+	```
+  - **get_recipes_by_types()** tests: 
+  
+	```python
+	print(b.get_recipes_by_types("dessert")[0])
+	# Should print the Crumble recipe
+	b.get_recipes_by_types("asdasd")
+	# The recipe type does not exist, error must be handled in a justifiable manner
+	# such as returning None, [], or printing an error message 
+	```
+    - With an correct type (with at least a recipe), the function must
+      print all the recipes which match the type.
+    - With a correct type which exists but being empty. This case must be handled properly
+    - Verify also 'last_update' did not change
+    - With a non existing recipe type, the function must declare an
+      error and handle it correctly. Returning an empty array is also acceptable.
 
 # Exercise 1: 'Exercise 01 - Family Tree'
 ## Description:
@@ -157,8 +201,8 @@ The goal of the exercise is to tackle the notion inheritance of class.
       is_alive, for example:
       `luigi = GotCharacter("Name", True)`
        Verify that the GotCharacter instance is alive and it's name.
-    - Check the presence of the docstring
-      `print(luigi.__doc__)`
+    - Check the presence of the docstring  `print(luigi.__doc__)` (Some python setting can make this return None, if thats the case, go check in the code for an explanative text below `def GotCharacter():`)
+     
     - Verify that the GotCharacter instance has no attributes 'house_words'
     or 'family_name' (of course you should not be able to call print_house_words()
     or the die() neither)
