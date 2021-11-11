@@ -118,53 +118,53 @@ iterable = [1, 2, 3]
 ```
 You can now copy paste the following bits of code into the python prompt in the terminal.
 - map function:
-	```python
-	ft_map(function_to_apply = None, iterable = iterable)
-	# "< generatortor object at hexa_adress>"
-	```
-	```python
-	list(ft_map(function_to_apply = None, iterable = iterable))
-	# You should get a TypeError Exception
-	```
-	
-	```python
-	ft_map(function, 2)
-	# you should get a TypeError Exception.
-	```
+     ```python
+    ft_map(function_to_apply = None, iterable = iterable)
+    # "< generatortor object at hexa_adress>"
+    ```
+     ```python
+    list(ft_map(function_to_apply = None, iterable = iterable))
+    # You should get a TypeError Exception
+    ```
+    
+     ```python
+    ft_map(function, 2)
+    # you should get a TypeError Exception.
+    ```
 
 <br/><br/>
 
 - ft_filter function:
-	```python
-	ft_filter(function_to_apply = None, iterable = iterable)
-	# "< generatortor object at hexa_adress>"
-	```
-	```python
-	list(ft_filter(function_to_apply = None, iterable = iterable))
-	# You should get a TypeError Exception
-	```
-	
-  	```python
-	ft_filter(function, None)
-	# you should get a TypeError Exception.
-	```
+    ```python
+    ft_filter(function_to_apply = None, iterable = iterable)
+    # "< generatortor object at hexa_adress>"
+    ```
+    ```python
+    list(ft_filter(function_to_apply = None, iterable = iterable))
+    # You should get a TypeError Exception
+    ```
+    
+      ```python
+    ft_filter(function, None)
+    # you should get a TypeError Exception.
+    ```
 
 <br/><br/>
 
 - ft_reduce function:
-	```python
-	ft_reduce(None, iterable = iterable)
-	# you should get a TypeError Exception
-	```
-	```python
-	ft_reduce(function, None)
-	# You should get a TypeError Exception
-	```
-	
-  	```python
-	ft_reduce(function, [])
-	# you should get a TypeError Exception.
-	```
+    ```python
+    ft_reduce(None, iterable = iterable)
+    # you should get a TypeError Exception
+    ```
+    ```python
+    ft_reduce(function, None)
+    # You should get a TypeError Exception
+    ```
+    
+      ```python
+    ft_reduce(function, [])
+    # you should get a TypeError Exception.
+    ```
 
 ## Basic tests:
 ### Guidelines:
@@ -261,20 +261,20 @@ from csvreader import CsvReader
 import sys 
 
 if __name__ == "__main__":
-	filename = sys.argv[1]
-	with CsvReader(filename, skip_top=18, skip_bottom=0) as reader:
-		if reader == None:
-			print("File is corrupted or missing")
-		else:
-			print(reader.getheader(), end = "\n")
-			print(reader.getdata(), end = "\n\n")
+    filename = sys.argv[1]
+    with CsvReader(filename, skip_top=18, skip_bottom=0) as reader:
+        if reader == None:
+            print("File is corrupted or missing")
+        else:
+            print(reader.getheader(), end = "\n")
+            print(reader.getdata(), end = "\n\n")
 
-	with CsvReader(filename, header = True, skip_top=17, skip_bottom=0) as reader:
-		if reader == None:
-			print("File is corrupted or missing")
-		else:
-			print(reader.getheader(), end = "\n")
-			print(reader.getdata(), end = "\n\n")
+    with CsvReader(filename, header = True, skip_top=17, skip_bottom=0) as reader:
+        if reader == None:
+            print("File is corrupted or missing")
+        else:
+            print(reader.getheader(), end = "\n")
+            print(reader.getdata(), end = "\n\n")
 ```
 Put the files bad.csv and good.csv in the current folder then run in terminal:
 ```bash
@@ -348,7 +348,7 @@ bash build.sh
 pip list | grep minipack
 # my-minipack        1.0.0
 ```
-	 
+     
 
 you should now be able to import your package !
 
