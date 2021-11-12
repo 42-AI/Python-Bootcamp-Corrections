@@ -117,7 +117,6 @@ function = lambda x: x + 1
 iterable = [1, 2, 3]
 ```
 You can now copy paste the following bits of code into the python prompt in the terminal.    
-**FOR THIS EXERCISE RETURNING NONE INSTEAD OF RAISING AN ERROR IS ACCEPTABLE**
 - **ft_map function**:
      ```python
     ft_map(function_to_apply = None, iterable = iterable)
@@ -126,13 +125,12 @@ You can now copy paste the following bits of code into the python prompt in the 
      ```python
     list(ft_map(function_to_apply = None, iterable = iterable))
     ```
-    You should get a TypeError Exception
+    You should get an Error
     
      ```python
     ft_map(function, 2)
     ```
-    you should get a TypeError Exception.
-
+    you should get an Error.
 <br/><br/>
 
 - **ft_filter function**:
@@ -144,12 +142,12 @@ You can now copy paste the following bits of code into the python prompt in the 
     ```python
     list(ft_filter(function_to_apply = None, iterable = iterable))
     ```
-    You should get a TypeError Exception (Returning None is also acceptable)
+    You should get an Error. (Returning None is also acceptable)
     
     ```python
     ft_filter(function, None)
     ```
-    You should get a TypeError Exception. (Returning None is also acceptable)
+    You should get an Error. (Returning None is also acceptable)
 
 <br/><br/>
 
@@ -157,17 +155,17 @@ You can now copy paste the following bits of code into the python prompt in the 
     ```python
     ft_reduce(None, iterable = iterable)
     ```
-    You should get a TypeError Exception (Returning None is also acceptable)
+    You should get an Error. (Returning None is also acceptable)
 
     ```python
     ft_reduce(function, None)
     ```
-    You should get a TypeError Exception (Returning None is also acceptable)
+    You should get an Error. (Returning None is also acceptable)
     
     ```python
     ft_reduce(function, [])
     ```
-    You should get a TypeError Exception. (Returning None is also acceptable)
+    You should get an Error. (Returning None is also acceptable)
 
 
 ## Basic tests:
