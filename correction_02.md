@@ -116,7 +116,8 @@ from ft_reduce import ft_reduce
 function = lambda x: x + 1
 iterable = [1, 2, 3]
 ```
-You can now copy paste the following bits of code into the python prompt in the terminal.
+You can now copy paste the following bits of code into the python prompt in the terminal.    
+**FOR THIS EXERCISE RETURNING NONE INSTEAD OF RAISING AN ERROR IS ACCEPTABLE**
 - **ft_map function**:
      ```python
     ft_map(function_to_apply = None, iterable = iterable)
