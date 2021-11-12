@@ -95,21 +95,13 @@ General rules
   make sure that your variable names and function names are appropriate and civil.
 
 # Exercise 0 - FileLoader
-The goal of this exercise is to create a Fileloader class containing a load and a display method.
+The goal of this exercise is to create a Fileloader class containing a load and a display method.   
     
-## Error management'
-No specific error management is asked, but the functions should not
-crash or leave in an unexpected way.
 put the csv file in the current directory
 ```python
 from FileLoader import FileLoader
 
 f = FileLoader()
-f.load("doesnt_exist.csv")
-f.load(12)
-f.display(None, 10)
-f.display([[1], [2]], 10)
-# None of these should crash raise Errors  
 
 df = f.load("./athlete_events.csv")
 # (271116, 15) displays the size of loaded dataset
@@ -225,14 +217,6 @@ Should output True
 The goal the exercise is to introduce plotting methods among the different
 libraries Pandas, Matplotlib, Seaborn or Scipy
     
-## Error management
-No specific output or behavior is expected if a parameters are wrongs or
-if non expected parameters are given, nethertheless a basic management
-is expected and those cases should be handled properly:
-- giving a non pandas.DataFrame type argument for the parameter 'data',
-- giving a non list of strings for the parameter 'features',
-- giving a non list of strings with at least one string not being one of the serie (column) within the dataframe 'data',
-- a dataframe composed of categorical features only (string values for examples like the features 'City' in the dataset). 
 
 ## Basic tests'
 Performs the following basic tests with the given dataset
@@ -242,22 +226,10 @@ with at least 3 numerical features:
 - run the method pair_plot with one, two and three valid features
 - run the method box_plot with one, two and three valid features
 
-
 # Exercise 7 - Komparator
 The goal the exercise is to introduce plotting methods among the different
 libraries Pandas, Matplotlib, Seaborn or Scipy.
     
-## Error management'
-No specific output or behavior is expected if a parameters are wrongs
-or if non expected parameters are given, nethertheless a basic management
-is expected and those cases should be handled properly:
-- giving a non pandas.DataFrame argument during the instance
-  of the object of class Komparator
-- giving a string parameter which does not correspond to a serie of the dataframe
-  (i.e. a random string) as 'categorical_var' parameter for the different methods
-- giving a random string parameter as 'numerical_var' parameter for the different methods
-- giving an existing numerical feature for 'categorical_var' for the different methods
-- giving an existing categorical feature for 'numerical_var' for the different methods
 
 ## Basic tests'
 Verify you get the expected plots for each methods:
