@@ -143,12 +143,12 @@ You can now copy paste the following bits of code into the python prompt in the 
     ```python
     list(ft_filter(function_to_apply = None, iterable = iterable))
     ```
-    You should get a TypeError Exception
+    You should get a TypeError Exception (Returning None is also acceptable)
     
     ```python
     ft_filter(function, None)
     ```
-    You should get a TypeError Exception.
+    You should get a TypeError Exception. (Returning None is also acceptable)
 
 <br/><br/>
 
@@ -156,17 +156,17 @@ You can now copy paste the following bits of code into the python prompt in the 
     ```python
     ft_reduce(None, iterable = iterable)
     ```
-    You should get a TypeError Exception
+    You should get a TypeError Exception (Returning None is also acceptable)
 
     ```python
     ft_reduce(function, None)
     ```
-    You should get a TypeError Exception
+    You should get a TypeError Exception (Returning None is also acceptable)
     
     ```python
     ft_reduce(function, [])
     ```
-    You should get a TypeError Exception.
+    You should get a TypeError Exception. (Returning None is also acceptable)
 
 
 ## Basic tests:
@@ -181,7 +181,7 @@ Perform some basic test such as the following:
 - `list(ft_filter(lambda x: x <= 1, []))`:
   you should get `[]`.
 - ft_reduce((lambda x, y: x + y), [1]):
-  you should get `[1]`.
+  you should get `1`.
 - ft_reduce((lambda x, y: x * y), [1, 2, 3, 4]):
   you should get `24`.
 Feel free to realize few more tests.
