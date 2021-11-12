@@ -346,7 +346,7 @@ find . -name "*.whl"
 find . -name "*.tar.gz"
 ```
 if any files are found delete them (make sure you are in the ex04 folder)
-
+If the `python3 -m venv venv` does not work, just run bash build.sh
 ```bash
 python3 -m venv venv
 source venv/bin/activate
