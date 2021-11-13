@@ -358,7 +358,7 @@ These functions should all return None because of incorect parameters (*Nothing 
 
 ## Basic tests
 Test the different methods, by taking a .png image of your choice and applying the filters.   
-Copy this code into a file, enter the filename and run it with python.
+Copy this code into a file, replace `"<PATH_TO_THE_IMAGE>"` by the actual path to the image and run the file with python.
 ```python
 import numpy as np
 import matplotlib
@@ -367,9 +367,8 @@ from matplotlib import pyplot as plt
 from ColorFilter import ColorFilter
 cf = ColorFilter()
 
-array = plt.imread("<PATH_TO_THE_IMAGE>")
-
 for f in [cf.to_red, cf.to_green, cf.to_blue, cf.invert]:
+	array = plt.imread("<PATH_TO_THE_IMAGE>")
 	plt.imshow(f(array))
 	plt.show()
 
