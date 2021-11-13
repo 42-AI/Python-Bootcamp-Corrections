@@ -446,6 +446,10 @@ In this exercise you learn how to modify or add attributes to an object.
 <br/><br/>
 
   - **For the following accounts ask the defendee to run his corruption detection function** :
+	```bash
+	python3 -i the_bank.py
+	```
+
 	-  The following account is corrupted because it has an attribute that starts with b:
         ```python
         from the_bank import Account, Bank
