@@ -115,73 +115,73 @@ classes and the manipulation of the objects related to those classes.
   With the help of the test.py file, carry out at least the following tests
   to try to stress the error management:
 
-	In the terminal:
-	```bash
-	python3
-	```
-	```python
-	from book import Book
-	from recipe import Recipe
-	```
+    In the terminal:
+    ```bash
+    python3
+    ```
+    ```python
+    from book import Book
+    from recipe import Recipe
+    ```
   - ## Recipe:
-	```python
-	Recipe("cooki", 0, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
-	```
-	Should print an error because cooking_lvl < 1
+    ```python
+    Recipe("cooki", 0, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
+    ```
+    Should print an error because cooking_lvl < 1
 
-	```python
-	Recipe("cooki", 1.5, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
-	```
-	Should print an error because cooking_lvl is not an int
-	OR
-	cooking lvl should be converted to an int somewhere
+    ```python
+    Recipe("cooki", 1.5, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
+    ```
+    Should print an error because cooking_lvl is not an int
+    OR
+    cooking lvl should be converted to an int somewhere
 
-	```python
-	Recipe("cooki", 1, 10, [], "deliciousness incarnate", "dessert")
-	```
-	Should print an error because empty ingredients
+    ```python
+    Recipe("cooki", 1, 10, [], "deliciousness incarnate", "dessert")
+    ```
+    Should print an error because empty ingredients
 
-	```python
-	Recipe("cooki", 1, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
-	print("Congratulations you finally made sime delicous cookies")
-	```
-	<br/><br/>
+    ```python
+    Recipe("cooki", 1, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
+    print("Congratulations you finally made sime delicous cookies")
+    ```
+    <br/><br/>
   - ## Book:
   - After the initialization of a correct Book object, verify:
-	```python
-	b = Book("My seductive recipes")
-	print(b.creation_date)
-	# should be the current date and time
-	print(b.last_update)
-	# should be the same as the creation date or None
-	```                    
+    ```python
+    b = Book("My seductive recipes")
+    print(b.creation_date)
+    # should be the current date and time
+    print(b.last_update)
+    # should be the same as the creation date or None
+    ```                    
   - **get_recipe_by_name()** tests:
-	```python
-	crumble = Recipe("Crumble" , 1, 25, ["apples", "flour", "sugar"], "dessert" ,"delicious")
-	b.add_recipe(crumble)
-	print(b.last_update)
-	```
-	Should be a different date / time than the one printed before
-	```python
-	b.get_recipe_by_name("Crumble")
-	# should print the recipe
-	# AND
-	# <Recipe object at x>
+    ```python
+    crumble = Recipe("Crumble" , 1, 25, ["apples", "flour", "sugar"], "dessert" ,"delicious")
+    b.add_recipe(crumble)
+    print(b.last_update)
+    ```
+    Should be a different date / time than the one printed before
+    ```python
+    b.get_recipe_by_name("Crumble")
+    # should print the recipe
+    # AND
+    # <Recipe object at x>
 
-	b.get_recipe_by_name("Liver Icecream")
-	# The recipe does not exist
-	# The error must be handled in a justifiable manner
-	# such as returning None, [], or printing an error message
-	```
+    b.get_recipe_by_name("Liver Icecream")
+    # The recipe does not exist
+    # The error must be handled in a justifiable manner
+    # such as returning None, [], or printing an error message
+    ```
   - **get_recipes_by_types()** tests: 
   
-	```python
-	print(b.get_recipes_by_types("dessert")[0])
-	# Should print the Crumble recipe
-	b.get_recipes_by_types("asdasd")
-	# The recipe type does not exist, error must be handled in a justifiable manner
-	# such as returning None, [], or printing an error message 
-	```
+    ```python
+    print(b.get_recipes_by_types("dessert")[0])
+    # Should print the Crumble recipe
+    b.get_recipes_by_types("asdasd")
+    # The recipe type does not exist, error must be handled in a justifiable manner
+    # such as returning None, [], or printing an error message 
+    ```
     - With an correct type (with at least a recipe), the function must
       print all the recipes which match the type.
     - With a correct type which exists but being empty. This case must be handled properly
@@ -252,12 +252,12 @@ their behaviors through the tests.
   - ```python
     print(Vector([1. , 2e-3, 3.14, 5.]).values)
     ```
-	Output: `[1.0, 2e-3, 3.14, 5.0]`
+    Output: `[1.0, 2e-3, 3.14, 5.0]`
 
   - ```python
     print(Vector(4).values)
     ```
-	Output: `[[0.0], [1.0], [2.0], [3.0]]`
+    Output: `[[0.0], [1.0], [2.0], [3.0]]`
 
   - ```python
     Vector(-1)
@@ -267,12 +267,12 @@ their behaviors through the tests.
   - ```python
     print(Vector((10, 12)).values )
     ```
-	Output: `[[10.0], [11.0]]`
+    Output: `[[10.0], [11.0]]`
 
   - ```python
     print(Vector((3, 1)).values)
     ```
-	Should display a properly handled error or [[3.0], [2.0]]
+    Should display a properly handled error or [[3.0], [2.0]]
 
   - ``` python
     v = Vector((1, 1))
@@ -294,22 +294,22 @@ their behaviors through the tests.
     ```python
     v = Vector(4)
     print(v.values)
-	```
+    ```
     Should output: `[[0.0], [1.0], [2.0], [3.0]]`
 
-	```python
+    ```python
     print(v * 4)
-	```
+    ```
     Should output: `[[0.0], [4.0], [8.0], [12.0]]`
 
-	```python
+    ```python
     print(4.0 * v)
-	```
+    ```
     Should output: `[[0.0], [4.0], [8.0], [12.0]]`
 
-	```python
+    ```python
     v * "hi"
-	```
+    ```
 
     The error should be handled, it should say raise SomeError in the code or print a message or return None or exit().
 
@@ -323,26 +323,26 @@ their behaviors through the tests.
     v = Vector(4)
     v2 = Vector([[1.0], [1.0], [1.0], [1.0]])
     print((v + v2).values)
-	```
+    ```
     Should output: `[[1.0], [2.0], [3.0], [4.0]]`
-	```python
+    ```python
     v + Vector([0.0, 0.0, 0.0, 0.0])
-	```
+    ```
     The error should be handled in some way
 
-	```python
+    ```python
     v + "hello"
-	```
+    ```
     The error should be handled in some way
 
-	```python
+    ```python
     v + None
-	```
+    ```
     The error should be handled in some way
 
-	```pyton
+    ```pyton
     print((v - v2).values == (v2 -v).values)
-	```
+    ```
     Should output: `True`
 
 <br/><br/>
@@ -446,87 +446,87 @@ In this exercise you learn how to modify or add attributes to an object.
 <br/><br/>
 
   - **For the following accounts ask the defendee to run his corruption detection function** :
-	```bash
-	python3 -i the_bank.py
-	```
+    ```bash
+    python3 -i the_bank.py
+    ```
 
-	-  The following account is corrupted because it has an attribute that starts with b:
+    -  The following account is corrupted because it has an attribute that starts with b:
         ```python
         from the_bank import Account, Bank
 
-		bank = Bank()
-		john = Account(
-			'William John',
-			zip='100-064',
-			brother="heyhey",
-			value=6460.0,
-			ref='58ba2b9954cd278eda8a84147ca73c87',
-			info=None,
-			other='This is the vice president of the corporation',
-			lol = "hihi"
-		)
-		```
-		```python
-		bank.fix_account(john)
-		# OR
-		bank.fix_account('William John')
-		```
-		This should fix john **OR** return a fixed copy of john
-
-
-	- The following account is corrupted because it has an even number of attributes:
-		```python
-		john = Account(
-			'William John',
-			zip='100-064',
-			rother="heyhey",
-			value=6460.0,
-			ref='58ba2b9954cd278eda8a84147ca73c87',
-			info=None,
-			other='This is the vice president of the corporation',
-		)
-		```
-		
-	- The following account is corrupted because it has no attribute "value":
-		```python
-		john = Account(
-			'William John',
-			zip='100-064',
-			rother="heyhey",
-			ref='58ba2b9954cd278eda8a84147ca73c87',
-			info=None,
-			other='This is the vice president of the corporation',
-			lol = "lolilol"
-		)
-		```
-
-	- **We will now test a bank transfer**
-		```python
-		bank.add(Account(
-			'Jane',
-			zip='911-745',
-			value=1000.0,
-			ref='1044618427ff2782f0bbece0abd05f31'
-		)
-
-		jhon = Account(
-			'Jhon',
-			zip='911-745',
-			value=1000.0,
-			ref='1044618427ff2782f0bbece0abd05f31'
-		)
-
-		bank.add(jhon)
-
-		print("testing a valid transfer")
-		print(jhon.value)
-		bank.transfer("Jane", "Jhon", 500)
-		print(jhon.value)
-		```
-		Should output `1000.0` then `1500.0`. The transfer worked .
-		
-		```python
-		bank.transfer("Jane", "Jhon", 1000)
-		print(jhon.value)
+        bank = Bank()
+        john = Account(
+            'William John',
+            zip='100-064',
+            brother="heyhey",
+            value=6460.0,
+            ref='58ba2b9954cd278eda8a84147ca73c87',
+            info=None,
+            other='This is the vice president of the corporation',
+            lol = "hihi"
+        )
         ```
-		Should output `1500.0`  OR Raise an Error, Jhon's balance did not change.
+        ```python
+        bank.fix_account(john)
+        # OR
+        bank.fix_account('William John')
+        ```
+        This should fix john **OR** return a fixed copy of john
+
+
+    - The following account is corrupted because it has an even number of attributes:
+         ```python
+        john = Account(
+            'William John',
+            zip='100-064',
+            rother="heyhey",
+            value=6460.0,
+            ref='58ba2b9954cd278eda8a84147ca73c87',
+            info=None,
+            other='This is the vice president of the corporation',
+        )
+        ```
+        
+    - The following account is corrupted because it has no attribute "value":
+        ```python
+        john = Account(
+            'William John',
+            zip='100-064',
+            rother="heyhey",
+            ref='58ba2b9954cd278eda8a84147ca73c87',
+            info=None,
+            other='This is the vice president of the corporation',
+            lol = "lolilol"
+        )
+        ```
+
+    - **We will now test a bank transfer**
+        ```python
+        bank.add(Account(
+            'Jane',
+            zip='911-745',
+            value=1000.0,
+            ref='1044618427ff2782f0bbece0abd05f31'
+        )
+
+        jhon = Account(
+            'Jhon',
+            zip='911-745',
+            value=1000.0,
+            ref='1044618427ff2782f0bbece0abd05f31'
+        )
+
+        bank.add(jhon)
+
+        print("testing a valid transfer")
+        print(jhon.value)
+        bank.transfer("Jane", "Jhon", 500)
+        print(jhon.value)
+        ```
+        Should output `1000.0` then `1500.0`. The transfer worked .
+        
+        ```python
+        bank.transfer("Jane", "Jhon", 1000)
+        print(jhon.value)
+        ```
+        Should output `1500.0`  OR Raise an Error, Jhon's balance did not change.
