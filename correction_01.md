@@ -523,10 +523,11 @@ In this exercise you learn how to modify or add attributes to an object.
         bank.transfer("Jane", "Jhon", 500)
         print(jhon.value)
         ```
-        Should output `1000.0` then `1500.0`. The transfer worked .
+        Should output `1000.0` then `True` then `1500.0`. The transfer worked .
         
         ```python
         bank.transfer("Jane", "Jhon", 1000)
         print(jhon.value)
         ```
-        Should output `1500.0`  OR Raise an Error, Jhon's balance did not change.
+        Should output `False` then `1500.0`  OR Raise an Error.   
+        Jhon's balance **MUST** not change.
