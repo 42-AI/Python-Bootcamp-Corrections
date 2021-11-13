@@ -116,7 +116,7 @@ from ft_reduce import ft_reduce
 function = lambda x: x + 1
 iterable = [1, 2, 3]
 ```
-You can now copy paste the following bits of code into the python prompt in the terminal.
+You can now copy paste the following bits of code into the python prompt in the terminal.    
 - **ft_map function**:
      ```python
     ft_map(function_to_apply = None, iterable = iterable)
@@ -125,12 +125,7 @@ You can now copy paste the following bits of code into the python prompt in the 
      ```python
     list(ft_map(function_to_apply = None, iterable = iterable))
     ```
-    You should get a TypeError Exception
-    
-     ```python
-    ft_map(function, 2)
-    ```
-    you should get a TypeError Exception.
+    You should get an Error
 
 <br/><br/>
 
@@ -143,12 +138,8 @@ You can now copy paste the following bits of code into the python prompt in the 
     ```python
     list(ft_filter(function_to_apply = None, iterable = iterable))
     ```
-    You should get a TypeError Exception
+    You should get an Error. (Returning None is also acceptable)
     
-    ```python
-    ft_filter(function, None)
-    ```
-    You should get a TypeError Exception.
 
 <br/><br/>
 
@@ -156,17 +147,12 @@ You can now copy paste the following bits of code into the python prompt in the 
     ```python
     ft_reduce(None, iterable = iterable)
     ```
-    You should get a TypeError Exception
+    You should get an Error. (Returning None is also acceptable)
 
     ```python
     ft_reduce(function, None)
     ```
-    You should get a TypeError Exception
-    
-    ```python
-    ft_reduce(function, [])
-    ```
-    You should get a TypeError Exception.
+    You should get an Error. (Returning None is also acceptable)
 
 
 ## Basic tests:
@@ -181,7 +167,7 @@ Perform some basic test such as the following:
 - `list(ft_filter(lambda x: x <= 1, []))`:
   you should get `[]`.
 - ft_reduce((lambda x, y: x + y), [1]):
-  you should get `[1]`.
+  you should get `1`.
 - ft_reduce((lambda x, y: x * y), [1, 2, 3, 4]):
   you should get `24`.
 Feel free to realize few more tests.
@@ -316,7 +302,7 @@ The goal of the exercise is to learn how to build a package and a distribution i
 
 ## Turn-in files
 ### Guidelines:
-A python package has to be constituted of the following files according to a similar file structure (one the two setup files is enough):
+A python package has to be comprised of the following files according to a similar file structure (one the two setup files is enough):
 ```
 ex02/
 ├─ LICENSE.txt      (mandatory for the exercise, recommended otherwise)
@@ -346,7 +332,6 @@ find . -name "*.whl"
 find . -name "*.tar.gz"
 ```
 if any files are found delete them (make sure you are in the ex04 folder)
-
 ```bash
 python3 -m venv venv
 source venv/bin/activate

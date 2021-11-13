@@ -223,19 +223,6 @@ array([[1, 2, 3],
        [7, 8, 9]])
 ```
 
-## Error managment
-### Guidelines:
-First, verify the class is correctly implemented and has the 4 methods and the
-constructor ('\_\_init\_\_').
-
-Verify the different methods handles incorrect parameters:
-- Non numpy.array for arr parameter. The functions return None.
-- dim different than a tuple of 2 acceptable integers for 'crop' and 'mosaic'. The functions return None.
-- position being different than (int1, int2) for 'crop'. The function returns None.
-- axis parameter for 'thin' and 'juxtapose' different than 0 and 1. The functions return None.
-      
-Verify the other combinaison of incorrect parameters.
-
 
 # Exercise 3 ColorFilter
 ## Error managment
