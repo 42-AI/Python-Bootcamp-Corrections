@@ -95,21 +95,13 @@ General rules
   make sure that your variable names and function names are appropriate and civil.
 
 # Exercise 0 - FileLoader
-The goal of this exercise is to create a Fileloader class containing a load and a display method.
+The goal of this exercise is to create a Fileloader class containing a load and a display method.   
     
-## Error management'
-No specific error management is asked, but the functions should not
-crash or leave in an unexpected way.
 put the csv file in the current directory
 ```python
 from FileLoader import FileLoader
 
 f = FileLoader()
-f.load("doesnt_exist.csv")
-f.load(12)
-f.display(None, 10)
-f.display([[1], [2]], 10)
-# None of these should crash raise Errors  
 
 df = f.load("./athlete_events.csv")
 # (271116, 15) displays the size of loaded dataset
@@ -145,14 +137,6 @@ The goal of this exercise is to create a function that will return a
 dictionary containing the age of the youngest woman and the youngest
 man who took part in the Olympics a given year.
     
-## Error management'
-No specific error management is expected, but the function should not
-crash or leave in an unexpected way.
-
-Test 'youngestfellah' by performing at least the following cases:
-- Passing a non existent year to youngestfellah for year parameter.
-- Passing a non pandas.DataFrame parameter for data parameter.
-
 ## Basic tests'
 Check the results of the following cases:
 - "youngestfellah(data, 1992)", output is: "{'f': 12.0, 'm': 11.0}"
@@ -168,25 +152,13 @@ The goal of this exercise is to create a function displaying the proportion
 of participants who played a given sport, among the participants of a given
 genders.
     
-## Error managment'
-No specific error management is expected, but the function should not
-crash or leave in an unexpected way.
-
-Thus test 'proportionBySport':
-- by giving a non pandas.DataFrame for data parameter
-- by giving a non integer type parameter for year parameter
-- by giving a non string type parameter for sport parameter
-- by giving a non string type parameter for gender parameter
-- by giving a non existent year (a year in the past or in the futur)
-- by giving a sport not in the dataframe
-- by giving a string different from 'M' and 'F' for the gender.
-
 ## Basic tests'
 Verify the results of the following cases:
-- "proportionBySport(data, 2004, 'Tennis', 'F')" , output is "0.01935634328358209"
-- "proportionBySport(data, 2008, 'Hockey', 'F'))", output is "0.04149467738431458"
-- "proportionbysport(data, 1964, 'Biathlon', 'M'))", output is "0.009539842873176206"
+- "proportionBySport(data, 2004, 'Tennis', 'F')" , output is "0.02307"
+- "proportionBySport(data, 2008, 'Hockey', 'F')", output is  "0.03284"
+- "proportionBySport(data, 1964, 'Biathlon', 'M')", output is "0.00659"
 
+*If you found 0.0193, 0.0414 and 0.0095 please contact jbarment on slack, a hasty correction is currenty happening and a mistake might be made*
 If something does not match, the exercise is failed.
 
 # Exercise 3 - HowManyMedals
@@ -194,16 +166,6 @@ The goal of this exercise is to code a function that will return
 a dictionary of dictionaries giving the number and type of medals
 for each year during which the participant won medals.
     
-## Error managment'
-No specific error management is expected, but the function should not
-crash or leave in an unexpected way.
-
-Thus test 'howManyMedals':
-- by giving a non expected type argument for data or participant parameter
-- by giving a empty pandas.DataFrame for data parameter
-- by giving a random string for the participant
-- by giving a parameter different than a string. 
-
 ## Basic tests'
 Verify the results of the following cases:
 - "howManyMedals(data, 'Gary Abraham')",
@@ -221,21 +183,11 @@ The goal of this exercise is to write a class called SpatioTemporalData
 that takes a dataset (pandas.DataFrame) as argument in its constructor
 and implements two methods.
     
-## Error management'
-No specific error management is expected, but the function should not
-crash or leave in an unexpected way.
-
-Thus test 'where' and 'when':
-- by giving to 'where' a non integer type parameter,
-- by giving to 'when' a non string parameter,
-- by giving to 'where' a year not present in the dataset,
-- by giving to 'when' a city (string object) not present in the dataset.
-
 
 ## Basic tests'
 Check the result of the following cases:
 - "print(sp.where(2000))", output is: "['Sydney']"
-- "print(sp.where(1980))", output is: "['Lake Placid', 'Moskva']"
+- "print(sp.where(1980))", output is: "['Lake Placid', 'Moskva']" If a single of these locations is returned it's ok.
 - "print(sp.when('London'))", output is: "[2012, 1948, 1908]"
 
 You should try other locations and years. 
@@ -246,40 +198,25 @@ If something does not match, the exercise is failed.
 The goal of this exercise is to write a function that returns a
 dictionary of dictionaries giving the number and type of medal for
 each competition where the country delegation earned medals.
-    
-## Error management'
-No specific error management is expected, but the function should not
-crash or leave in an unexpected way.
-
-Thus test 'howManyMedalsByCountry':
-- by giving to 'data' a non pandas.DataFrame type parameter
-- by giving to 'country_name' a non string parameter
-- by giving to 'country_name' a country name not present into the dataset.
 
 
 ## Basic tests'
 Print the result of howManyMedalsByCountry functions calls with various countries
 and check that the format respects the following.
 ```
-"{1952: {'G': 0, 'S': 0, 'B': 0},
- 1956: {'G': 0, 'S': 0, 'B': 0},
- 1960: {'G': 0, 'S': 0, 'B': 0},
- 1964: {'G': 0, 'S': 0, 'B': 1}}"
+"{1952: {'G': 0, 'S': 0, 'B': 0}, 1956: {'G': 0, 'S': 0, 'B': 0}, 1960: {'G': 0, 'S': 0, 'B': 0}, 1964: {'G': 0, 'S': 0, 'B': 1}}"
 ```
-Try the functions with various countries and check for inconsistencies.
+
+```python
+print(howManyMedalsByCountry(df, "Zimbabwe")  == {1928: {'G': 0, 'S': 0, 'B': 0}, 1960: {'G': 0, 'S': 0, 'B': 0}, 1964: {'G': 0, 'S': 0, 'B': 0}, 1980: {'G': 15, 'S': 0, 'B': 0}, 1984: {'G': 0, 'S': 0, 'B': 0}, 1988: {'G': 0, 'S': 0, 'B': 0}, 1992: {'G': 0, 'S': 0, 'B': 0}, 1996: {'G': 0, 'S': 0, 'B': 0}, 2000: {'G': 0, 'S': 0, 'B': 0}, 2004: {'G': 1, 'S': 1, 'B': 1}, 2008: {'G': 1, 'S': 3, 'B': 0}, 2012: {'G': 0, 'S': 0, 'B': 0}, 2014: {'G': 0, 'S': 0, 'B': 0}, 2016: {'G': 0, 'S': 0, 'B': 0}})
+```
+Should output True
+
 
 # Exercise 6 - MyPlotLib
 The goal the exercise is to introduce plotting methods among the different
 libraries Pandas, Matplotlib, Seaborn or Scipy
     
-## Error management
-No specific output or behavior is expected if a parameters are wrongs or
-if non expected parameters are given, nethertheless a basic management
-is expected and those cases should be handled properly:
-- giving a non pandas.DataFrame type argument for the parameter 'data',
-- giving a non list of strings for the parameter 'features',
-- giving a non list of strings with at least one string not being one of the serie (column) within the dataframe 'data',
-- a dataframe composed of categorical features only (string values for examples like the features 'City' in the dataset). 
 
 ## Basic tests'
 Performs the following basic tests with the given dataset
@@ -289,22 +226,10 @@ with at least 3 numerical features:
 - run the method pair_plot with one, two and three valid features
 - run the method box_plot with one, two and three valid features
 
-
 # Exercise 7 - Komparator
 The goal the exercise is to introduce plotting methods among the different
 libraries Pandas, Matplotlib, Seaborn or Scipy.
     
-## Error management'
-No specific output or behavior is expected if a parameters are wrongs
-or if non expected parameters are given, nethertheless a basic management
-is expected and those cases should be handled properly:
-- giving a non pandas.DataFrame argument during the instance
-  of the object of class Komparator
-- giving a string parameter which does not correspond to a serie of the dataframe
-  (i.e. a random string) as 'categorical_var' parameter for the different methods
-- giving a random string parameter as 'numerical_var' parameter for the different methods
-- giving an existing numerical feature for 'categorical_var' for the different methods
-- giving an existing categorical feature for 'numerical_var' for the different methods
 
 ## Basic tests'
 Verify you get the expected plots for each methods:
