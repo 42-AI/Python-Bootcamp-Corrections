@@ -97,18 +97,16 @@ General rules
 ### Guidelines:
 To test this exercise, you can launch the follwing command on your terminal:
 ```bash
-python
+python3
 ```
 then
-```bash
+```python
 >>> from NumPyCreator import NumPyCreator
 >>> npc = NumPyCreator()
->>>
 ```
 
-### Basic tests
-### Guidelines:
-Check if all the following cases have a correct behaviour:
+## Basic tests
+In this python interpretor, check if all the following cases have a correct behaviour:
 ```python
 >>> npc.from_list([[],[]])
 array([], shape=(2, 0), dtype=float64)
@@ -137,10 +135,11 @@ array([[1., 0., 0., 0.],
        [0., 0., 0., 1.]])
 ```
 
+For values contained in identity and from_shape function, both integer and float values are acceptable.
 
-### Error management
-The different methods should handle wrong type, ragged nested list/tuple.
-Perform at least the following cases, they should all return None:
+
+## Error management
+Perform at least the following cases, they should all return None because of incorrect parameters:
 ```python
 print(npc.from_list("toto"))
 print(npc.from_list([[1,2,3],[6,3,4],[8,5,6,7]]))
@@ -156,16 +155,15 @@ print(npc.identity(-1))
 ### Guidelines:
 To test this exercise, you can launch the follwing command on your terminal:
 ```bash
-python
+python3
 ```
 then
 ```bash
 >>> from ImageProcessor import ImageProcessor
 >>> imp = ImageProcessor()
->>>
 ```
 Verify the class ImageProcessor and that the methods 'load' and 'display'
-are implemented.
+are implemented in \"ImageProcessor.py\".
 
 As a class, special method '\_\_init\_\_' has to be present.
 - The method 'load' handles empty and non existing file.
@@ -184,8 +182,12 @@ The image should be displayed in a separate window when running in the console.
     
 # Exercise 2 ScrapBooker
 ## Basic tests
-### Guidelines:
 Perform basic tests to verify the proper behaviour of the different methods.
+First, launch the python interpreter by taping the following command on your terminal:
+```
+python
+```
+then copy paste the commands starting by >>> and check if they have the same behaviour as here:
 ```python
 >>> import numpy as np
 >>> from ScrapBooker import ScrapBooker
@@ -209,10 +211,7 @@ array([['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'],
        ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'],
        ['D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],
        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
-       ['G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G'],
-       ['H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H', 'H'],
-       ['J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J', 'J'],
-       ['K', 'K', 'K', 'K', 'K', 'K', 'K', 'K', 'K', 'K']], dtype='<U1')
+       ['G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G']], dtype='<U1')
 >>> arr4 = np.array([[1, 2, 3],[4, 5, 6],[7, 8, 9]])
 >>> spb.juxtapose(arr4, 2, 0)
 array([[1, 2, 3],
@@ -223,20 +222,28 @@ array([[1, 2, 3],
        [7, 8, 9]])
 ```
 
+## Error managment
+First, verify the class is correctly implemented and has the 4 methods and the
+constructor ('\_\_init\_\_').
+try:
+```python
+not_numpy_arr = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
+spb.crop(not_numpy_arr, (1,2))
+spb.juxtapose(arr4, -2, 0)
+spb.mosaic(arr4, (1, 2, 3))
+```
+These functions should all return None because of incorect parameters
+
 
 # Exercise 3 ColorFilter
 ## Error managment
-### Guidelines:
 First, verify the 6 methods plus the constructr are implemented in the class
 'ColorFilter'.
 
-As usual, check the error managment of the different methods.
-
 
 ## Basic tests
-### Guidelines:
-Test the different methods, by taking a picture of your choice and applying the filters.
-try this on your terminal for example:
+Test the different methods, by taking a .png image of your choice and applying the filters.
+Launch the python interpretor by typing `python` on yout terminal then try this for example:
 ```python
 >>> import numpy as np
 >>> import matplotlib
@@ -248,12 +255,18 @@ try this on your terminal for example:
 >>> plt.imshow(green)
 >>> plt.show()
 ```
-You should observed the 'to_green' method generate a new array corresponding to the original image with a green filter, and so on.
+
+You should observed the 'to_green' method generate a new array corresponding to the original image with a green filter, and so on. Celluloid filter is optional, not mandatory.
+
 
 # Exercise 4 K-means Clustering
 ## Implementaion & Basic tests
 ### Guidelines:
 - First verify the correct implementation of the class (constructor and methods).
+  Try launching the following command with the corresponding path on your terminal:
+```bash
+python Kmeans.py filepath='<path_to_solar_system_census_csv_file>' ncentroid=4 max_iter=30
+```
 - The centroids are randomly initialized.
 - Program can handles different set of values (reasonnable ones) for 'ncentroid' and 'max_iter' arguments.
 - For a fix value of 'ncentroid', centroids coordinates slightly differ when running the algorithm multiple times.
