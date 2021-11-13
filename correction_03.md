@@ -243,7 +243,7 @@ Verify the class ImageProcessor and that the methods '**load**' and '**display**
 are implemented in \"ImageProcessor.py\".
 
 As a class, special method '**\_\_init\_\_**' has to be present.
-- The method '**load**' handles empty and non existing file.
+- The method '**load** :
   ```python
   arr = imp.load("../ressources/42AI.png")
   # Loading image of dimensions 200 x 200
@@ -253,7 +253,7 @@ As a class, special method '**\_\_init\_\_**' has to be present.
 
 <br>
 
-- The method 'display' handles non array-like, empty or None argument.
+- The method '**display**' :.
   ```python
   imp.display(arr)
   ```
@@ -357,18 +357,17 @@ These functions should all return None because of incorect parameters (*Nothing 
 # Exercise 3 ColorFilter
 
 ## Basic tests
-Test the different methods, by taking a .png image of your choice and applying the filters.
-Launch the python interpretor by typing `python` on yout terminal then try this for example:
-```bash
-python3
-```
+Test the different methods, by taking a .png image of your choice and applying the filters.   
+Copy this code into a file, enter the filename and run it with python.
 ```python
 import numpy as np
 import matplotlib
 from matplotlib import pyplot as plt
+
+from ColorFilter import ColorFilter
 cf = ColorFilter()
 
-array = plt.imread("PATH TO PNG IMAGE")
+array = plt.imread("<PATH_TO_THE_IMAGE>")
 
 for f in [cf.to_red, cf.to_green, cf.to_blue, cf.invert]:
 	plt.imshow(f(array))
