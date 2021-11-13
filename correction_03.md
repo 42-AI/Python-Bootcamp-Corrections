@@ -101,45 +101,112 @@ python3
 ```
 then
 ```python
->>> from NumPyCreator import NumPyCreator
->>> npc = NumPyCreator()
+from NumPyCreator import NumPyCreator
+npc = NumPyCreator()
 ```
 
 ## Basic tests
 In this python interpretor, check if all the following cases have a correct behaviour:
-```python
->>> npc.from_list([[],[]])
-array([], shape=(2, 0), dtype=float64)
->>> npc.from_list([[1,2,3],[6,3,4],[8,5,6]])
-array([[1, 2, 3],
-       [6, 3, 4],
-       [8, 5, 6]])
->>> npc.from_tuple(("a","b","c"))
-array(['a', 'b', 'c'], dtype='<U1')
->>> npc.from_iterable(range(5))
-array([0, 1, 2, 3, 4])
->>> npc.from_shape((0, 0))
-array([], shape=(0, 0), dtype=float64)
->>> npc.from_shape((3, 5))
-array([[0., 0., 0., 0., 0.],
-       [0., 0., 0., 0., 0.],
-       [0., 0., 0., 0., 0.]])
->>> npc.random((3, 5))
-array([[0.74819604, 0.32295616, 0.27371925, 0.57171326, 0.92582071],
-       [0.70307642, 0.94846695, 0.12465384, 0.25146454, 0.11179953],
-       [0.38326719, 0.26179493, 0.88157011, 0.29978869, 0.72677049]])
->>> npc.identity(4)
-array([[1., 0., 0., 0.],
-       [0., 1., 0., 0.],
-       [0., 0., 1., 0.],
-       [0., 0., 0., 1.]])
-```
+
+- This command:
+  ```python
+  npc.from_list([[],[]])
+  ```
+  Shoud Output:
+  ```
+  array([], shape=(2, 0), dtype=float64)
+  ```
+<br>
+
+- This command:
+  ```python
+  npc.from_list([[1,2,3],[6,3,4],[8,5,6]])
+  ```
+  Shoud Output:
+  ```
+  array([[1, 2, 3],
+        [6, 3, 4],
+        [8, 5, 6]])
+  ```
+<br>
+
+- This command:
+
+  ```python
+  npc.from_tuple(("a","b","c"))
+  ```
+  Shoud Output:
+  ```
+  array(['a', 'b', 'c'], dtype='<U1')
+  ```
+
+<br>
+
+- This command:
+  ```python
+  npc.from_iterable(range(5))
+  ```
+  Shoud Output:
+  ```
+  array([0, 1, 2, 3, 4])
+  ```
+
+<br>
+
+- This command:
+  ```python
+  npc.from_shape((0, 0))
+  ```
+  Shoud Output:
+  ```
+  array([], shape=(0, 0), dtype=float64)
+  ```
+
+<br>
+
+- This command:
+  ```python
+  npc.from_shape((3, 5))
+  ```
+  Should output:
+  ```
+  array([[0., 0., 0., 0., 0.],
+        [0., 0., 0., 0., 0.],
+        [0., 0., 0., 0., 0.]])
+  ```
+<br>
+
+- This command:
+  ```python
+  npc.random((3, 5))
+  ```
+  Should output:   
+  ```
+  array([[0.74819604, 0.32295616, 0.27371925, 0.57171326, 0.92582071],
+        [0.70307642, 0.94846695, 0.12465384, 0.25146454, 0.11179953],
+        [0.38326719, 0.26179493, 0.88157011, 0.29978869, 0.72677049]])`
+  ```
+
+<br>
+
+- This command:
+  ```python
+  npc.identity(4)
+  ```
+    Should output:   
+  ```
+  array([[1., 0., 0., 0.],
+        [0., 1., 0., 0.],
+        [0., 0., 1., 0.],
+        [0., 0., 0., 1.]])
+  ```
+
 
 For values contained in identity and from_shape function, both integer and float values are acceptable.
 
 
 ## Error management
-Perform at least the following cases, they should all return None because of incorrect parameters:
+Run this:
 ```python
 print(npc.from_list("toto"))
 print(npc.from_list([[1,2,3],[6,3,4],[8,5,6,7]]))
@@ -148,7 +215,15 @@ print(npc.from_tuple(((1,5,8),(7,5))))
 print(npc.from_shape((-1, -1)))
 print(npc.identity(-1))
 ```
-
+Should print:
+```python
+None
+None
+None
+None
+None
+None
+```
 
 # Exercise 1 ImageProcessor
 ## Implementation
@@ -157,70 +232,111 @@ To test this exercise, you can launch the follwing command on your terminal:
 ```bash
 python3
 ```
+
 then
 ```bash
->>> from ImageProcessor import ImageProcessor
->>> imp = ImageProcessor()
+from ImageProcessor import ImageProcessor
+imp = ImageProcessor()
 ```
-Verify the class ImageProcessor and that the methods 'load' and 'display'
+
+Verify the class ImageProcessor and that the methods '**load**' and '**display**'
 are implemented in \"ImageProcessor.py\".
 
-As a class, special method '\_\_init\_\_' has to be present.
-- The method 'load' handles empty and non existing file.
-```python
->>> arr = imp.load("../ressources/42AI.png")
-Loading image of dimensions 200 x 200
->>> print(arr)
-```
-The print should display a nested list of RGB pixel numbers contained by the image (cf subject)
-- The method 'display' handles non array-like, empty or None argument.
-```python
->>> imp.display(arr)
-```
-The image should be displayed in a separate window when running in the console.
+As a class, special method '**\_\_init\_\_**' has to be present.
+- The method '**load**' handles empty and non existing file.
+  ```python
+  arr = imp.load("../ressources/42AI.png")
+  # Loading image of dimensions 200 x 200
+  print(arr)
+  ```
+  The print should display a nested list of RGB pixel numbers contained by the image (cf subject)
 
+<br>
+
+- The method 'display' handles non array-like, empty or None argument.
+  ```python
+  imp.display(arr)
+  ```
+  The image should be displayed in a separate window when running in the console.
+
+<br>
+<br>
     
 # Exercise 2 ScrapBooker
 ## Basic tests
 Perform basic tests to verify the proper behaviour of the different methods.
 First, launch the python interpreter by taping the following command on your terminal:
 ```
-python
+python3
 ```
-then copy paste the commands starting by >>> and check if they have the same behaviour as here:
-```python
->>> import numpy as np
->>> from ScrapBooker import ScrapBooker
->>> spb = ScrapBooker()
->>> arr1 = np.arange(0,25).reshape(5,5)
->>> spb.crop(arr1, (3,1),(1,0))
-array([[ 5],
-       [10],
-       [15]])
->>> arr2 = np.array("A B C D E F G H I".split() * 6).reshape(-1,9)
->>> spb.thin(arr2,3,0)
-array([['A', 'B', 'D', 'E', 'G', 'H'],
-       ['A', 'B', 'D', 'E', 'G', 'H'],
-       ['A', 'B', 'D', 'E', 'G', 'H'],
-       ['A', 'B', 'D', 'E', 'G', 'H'],
-       ['A', 'B', 'D', 'E', 'G', 'H'],
-       ['A', 'B', 'D', 'E', 'G', 'H']], dtype='<U1')
->>> arr3 = np.array([[var] * 10 for var in "ABCDEFG"])
->>> spb.thin(arr3,3,1)
-array([['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'],
-       ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'],
-       ['D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],
-       ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
-       ['G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G']], dtype='<U1')
->>> arr4 = np.array([[1, 2, 3],[4, 5, 6],[7, 8, 9]])
->>> spb.juxtapose(arr4, 2, 0)
-array([[1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9],
-       [1, 2, 3],
-       [4, 5, 6],
-       [7, 8, 9]])
-```
+- then copy paste the commands and check if they have the same output aviour as here:
+  ```python
+  import numpy as np
+  from ScrapBooker import ScrapBooker
+  spb = ScrapBooker()
+  arr1 = np.arange(0,25).reshape(5,5)
+  spb.crop(arr1, (3,1),(1,0))
+  ```
+
+  Output:
+  ```python
+  array([[ 5],
+        [10],
+        [15]])
+  ```
+
+<br>
+
+-
+  ```python
+  arr2 = np.array("A B C D E F G H I".split() * 6).reshape(-1,9)
+  spb.thin(arr2,3,0)
+  ```
+  
+  Output :  
+  ```python
+  array([['A', 'B', 'D', 'E', 'G', 'H'],
+        ['A', 'B', 'D', 'E', 'G', 'H'],
+        ['A', 'B', 'D', 'E', 'G', 'H'],
+        ['A', 'B', 'D', 'E', 'G', 'H'],
+        ['A', 'B', 'D', 'E', 'G', 'H'],
+        ['A', 'B', 'D', 'E', 'G', 'H']], dtype='<U1')
+  ```
+
+<br>
+
+-
+  ```python
+  arr3 = np.array([[var] * 10 for var in "ABCDEFG"])
+  spb.thin(arr3,3,1)
+  ```
+
+  Output :  
+  ```python
+  array([['A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A', 'A'],
+        ['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'],
+        ['D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D', 'D'],
+        ['E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E', 'E'],
+        ['G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G', 'G']], dtype='<U1')
+  ```
+
+<br>
+
+-
+  ```python
+  arr4 = np.array([[1, 2, 3],[4, 5, 6],[7, 8, 9]])
+  spb.juxtapose(arr4, 2, 0)
+  ```
+
+  Output :
+  ```python
+  array([[1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]])
+  ```
 
 ## Error managment
 First, verify the class is correctly implemented and has the 4 methods and the
@@ -232,41 +348,53 @@ spb.crop(not_numpy_arr, (1,2))
 spb.juxtapose(arr4, -2, 0)
 spb.mosaic(arr4, (1, 2, 3))
 ```
-These functions should all return None because of incorect parameters
+These functions should all return None because of incorect parameters (*Nothing will show on screen when you run the above code*)
+
+<br>
+<br>
 
 
 # Exercise 3 ColorFilter
-## Error managment
-First, verify the 6 methods plus the constructr are implemented in the class
-'ColorFilter'.
-
 
 ## Basic tests
 Test the different methods, by taking a .png image of your choice and applying the filters.
 Launch the python interpretor by typing `python` on yout terminal then try this for example:
+```bash
+python3
+```
 ```python
->>> import numpy as np
->>> import matplotlib
->>> from matplotlib import pyplot as plt
->>> from ColorFilter import ColorFilter
->>> cf = ColorFilter()
->>> array = plt.imread("<path_to_png_file>")
->>> green = cf.to_green(array)
->>> plt.imshow(green)
->>> plt.show()
+import numpy as np
+import matplotlib
+from matplotlib import pyplot as plt
+cf = ColorFilter()
+
+array = plt.imread("PATH TO PNG IMAGE")
+
+for f in [cf.to_red, cf.to_green, cf.to_blue, cf.invert]:
+	plt.imshow(f(array))
+	plt.show()
+
+plt.imshow(cf.to_grayscale(array, "m"), cmap="gray")
+plt.show()
+
+plt.imshow(cf.to_grayscale(array, "w", weights = [0.2126, 0.7152, 0.0722]), cmap="gray")
+plt.show()
 ```
 
-You should observed the 'to_green' method generate a new array corresponding to the original image with a green filter, and so on. Celluloid filter is optional, not mandatory.
+You should see a Red, Blue, Green, Inverted and Gray version of the image (implementation for grayscale may vary, the defendee may change the imshow function)   
+**YOU HAVE TO CLOSE THE IMAGES THAT SHOW ON SCREEN FOR THE FOLLOWING TO SHOW**   
 
+<br>
+<br>
 
 # Exercise 4 K-means Clustering
 ## Implementaion & Basic tests
 ### Guidelines:
 - First verify the correct implementation of the class (constructor and methods).
   Try launching the following command with the corresponding path on your terminal:
-```bash
-python Kmeans.py filepath='<path_to_solar_system_census_csv_file>' ncentroid=4 max_iter=30
-```
+  ```bash
+  python Kmeans.py filepath='<path_to_solar_system_census_csv_file>' ncentroid=4 max_iter=30
+  ```
 - The centroids are randomly initialized.
 - Program can handles different set of values (reasonnable ones) for 'ncentroid' and 'max_iter' arguments.
 - For a fix value of 'ncentroid', centroids coordinates slightly differ when running the algorithm multiple times.
