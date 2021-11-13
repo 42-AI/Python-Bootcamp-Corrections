@@ -145,6 +145,7 @@ classes and the manipulation of the objects related to those classes.
 	Recipe("cooki", 1, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
 	print("Congratulations you finally made sime delicous cookies")
 	```
+	<br/><br/>
   - ## Book:
   - After the initialization of a correct Book object, verify:
 	```python
@@ -188,6 +189,7 @@ classes and the manipulation of the objects related to those classes.
     - With a non existing recipe type, the function must declare an
       error and handle it correctly. Returning an empty array is also acceptable.
 
+<br/><br/>
 # Exercise 1: 'Exercise 01 - Family Tree'
 ## Description:
 The goal of the exercise is to tackle the notion inheritance of class.
@@ -224,6 +226,7 @@ The goal of the exercise is to tackle the notion inheritance of class.
       and it name
 
 
+<br/><br/>
 # Exercise 2: 'Exercise 02 - The Vector'
 ## Description:
 The goal of the exercise is to get you used with built-in methods,
@@ -284,6 +287,7 @@ their behaviors through the tests.
     This is an error and should be properly handled by displaying an
     error message.
 
+<br/><br/>
 - **built-in methods \_\_mul\_\_ and \_\_rmul\_\_**  
   Verify the correct implementation of the built-in method \_\_mul\_\_ and
   \_\_rmul\_\_ by	performing several tests related to '*' operator:
@@ -310,7 +314,7 @@ their behaviors through the tests.
     The error should be handled, it should say raise SomeError in the code or print a message or return None or exit().
 
 
-
+<br/><br/>
 - **built-in method \_\_add\_\_, \_\_radd\_\_, \_\_sub\_\_ and \_\_rsub\_\_**\
   Verify the correct implementation of the built-in method \_\_add\_\_,
   \_\_radd\_\_, \_\_sub\_\_ and \_\_rsub\_\_ by performing several tests related
@@ -341,7 +345,7 @@ their behaviors through the tests.
 	```
     Should output: `True`
 
-
+<br/><br/>
 - **built-in method \_\_div\_\_ and \_\_rdiv\_\_**\
   For division perform the following tests:
   - 'Vector(4) / 2'
@@ -353,6 +357,7 @@ their behaviors through the tests.
   - 3 / Vector(3) shoud raise an error or the choice of behaviour must be justifiable
     as multiple mathematical definitions of division by a vector exist.
 
+<br/><br/>
 # Exercise 3: 'Exercise 03 - Generator!'
 ## Description:
 The goal of the exercise is to discover the concept of generator object
@@ -396,7 +401,7 @@ performs a splitting operation and an ordering class operation.
       the last value, 2 runs with 'shuffle' should not give the same
       arrangement (th opposite is highly unlikely). Verify also there is no missing words.
 
-
+<br/><br/>
 # Exercise 4: 'Exercise 04 - Working with lists'
 ## Description:
 The goal of the exercise is to discover 2 useful methods for lists,
@@ -418,7 +423,7 @@ zip and enumerate.
   - Then, test a few cases with lists length 1 and 2 to check the
     validity of the implementation and check no term of lists are missing
     in the sum of products (especially the last one).
-
+<br/><br/>
 # Exercise 5: 'Exercise 05 - Bank account'
 ## Description:
 The goals of this exercise is to teach you new built-in functions and
@@ -427,7 +432,7 @@ of possibility to modify instanced objects.
 In this exercise you learn how to modify or add attributes to an object.
 
 ## Questions:
-  - **Error managament and basic tests**   
+  - **Basic tests**   
     - First, you have to check the classes implementation, meaning that you
       have to check the presence of:
       - the class Account and Bank in the file bank.py
@@ -438,10 +443,10 @@ In this exercise you learn how to modify or add attributes to an object.
         Student may have implement extra methods to manage the security
         aspect, thus it is okay to have more than the methods mentionned.
 
-    - Second, you have to perform the following test to verify the security
-      management:
-      - **For the following accounts ask the defendee to run his corruption detection function** :
-	-  The following account is corrupted because it has an attribute that starts with b
+<br/><br/>
+
+  - **For the following accounts ask the defendee to run his corruption detection function** :
+	-  The following account is corrupted because it has an attribute that starts with b:
         ```python
         from the_bank import Account, Bank
 
@@ -463,7 +468,7 @@ In this exercise you learn how to modify or add attributes to an object.
 		This should fix john OR return a fixed copy of john
 
 
-	- The following account is corrupted because it has an even number of attributes.
+	- The following account is corrupted because it has an even number of attributes:
 		```python
 		john = Account(
 			'William John',
@@ -476,7 +481,7 @@ In this exercise you learn how to modify or add attributes to an object.
 			))
 		```
 		
-	- The following account is corrupted because it has no attribute "value".
+	- The following account is corrupted because it has no attribute "value":
 		```python
 		john = Account(
 			'William John',
@@ -489,7 +494,7 @@ In this exercise you learn how to modify or add attributes to an object.
 			))
 		```
 
-	- We will now test bank transfers
+	- **We will now test a bank transfer**
 		```python
 		bank.add(Account(
 			'Jane',
@@ -509,23 +514,13 @@ In this exercise you learn how to modify or add attributes to an object.
 
 		print("testing a valid transfer")
 		print(jhon.value)
-		```
-		Should output `1000.0`
-		
-		```python
 		bank.transfer("Jane", "Jhon", 500)
 		print(jhon.value)
 		```
-		Should output `1500.0`
-
-		```python
-		print("testing an invalid transfer")
-		print(jhon.value)
-		```
-		Should output `1500.0`
-
+		Should output `1000.0` then `1500.0`. The transfer worked .
+		
 		```python
 		bank.transfer("Jane", "Jhon", 1000)
 		print(jhon.value)
         ```
-		Should output `1500.0`  OR Raise an Error
+		Should output `1500.0`  OR Raise an Error, Jhon's balance did not change.
