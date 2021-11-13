@@ -126,16 +126,22 @@ classes and the manipulation of the objects related to those classes.
   - ## Recipe:
 	```python
 	Recipe("cooki", 0, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
-	# Should print an error because cooking_lvl < 1
+	```
+	Should print an error because cooking_lvl < 1
 
+	```python
 	Recipe("cooki", 1.5, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
-	# Should print an error because cooking_lvl is not an int
-	# OR
-	# cooking lvl should be converted to an int somewhere
+	```
+	Should print an error because cooking_lvl is not an int
+	OR
+	cooking lvl should be converted to an int somewhere
 
+	```python
 	Recipe("cooki", 1, 10, [], "deliciousness incarnate", "dessert")
-	# Should print an error because empty ingredients
+	```
+	Should print an error because empty ingredients
 
+	```python
 	Recipe("cooki", 1, 10, ["dough", "sugar", "love"], "deliciousness incarnate", "dessert")
 	print("Congratulations you finally made sime delicous cookies")
 	```
@@ -153,8 +159,9 @@ classes and the manipulation of the objects related to those classes.
 	crumble = Recipe("Crumble" , 1, 25, ["apples", "flour", "sugar"], "dessert" ,"delicious")
 	b.add_recipe(crumble)
 	print(b.last_update)
-	# Should be different than the previous one
-
+	```
+	Should be different than the previous one
+	```python
 	b.get_recipe_by_name("Crumble")
 	# should print the recipe
 	# AND
@@ -241,42 +248,41 @@ their behaviors through the tests.
   possibilities and verify if the values and shape are correct:
   - ```python
     print(Vector([1. , 2e-3, 3.14, 5.]).values)
-    # [1.0, 2e-3, 3.14, 5.0]
     ```
+	Output: `[1.0, 2e-3, 3.14, 5.0]`
 
   - ```python
     print(Vector(4).values)
-    # [[0.0], [1.0], [2.0], [3.0]]
     ```
+	Output: `[[0.0], [1.0], [2.0], [3.0]]`
 
   - ```python
     Vector(-1)
-    # This is an error and should be properly handled by displaying an error message.
     ```
+    This is an error and should be properly handled by displaying an error message.
     
   - ```python
     print(Vector((10, 12)).values )
-    # [[10.0], [11.0]]
     ```
-  
+	Output: `[[10.0], [11.0]]`
+
   - ```python
     print(Vector((3, 1)).values)
-    # Should display a properly handled error or [[3.0], [2.0]]
     ```
+	Should display a properly handled error or [[3.0], [2.0]]
 
   - ``` python
     v = Vector((1, 1))
     print(v.values)
-    # three behviours are acceptable
-    # raise an error or print [] or print [[]]
     ```
+    three behviours are acceptable:
+    raise an error or print `[]` or print `[[]]`
 
   - ```python
     Vector((4, 7.1)) `:
+    ```
     This is an error and should be properly handled by displaying an
     error message.
-    ```
-
 
 - **built-in methods \_\_mul\_\_ and \_\_rmul\_\_**  
   Verify the correct implementation of the built-in method \_\_mul\_\_ and
@@ -284,40 +290,57 @@ their behaviors through the tests.
     ```python
     v = Vector(4)
     print(v.values)
-    # [[0.0], [1.0], [2.0], [3.0]]
+	```
+    Should output: `[[0.0], [1.0], [2.0], [3.0]]`
+
+	```python
     print(v * 4)
-    # [[0.0], [4.0], [8.0], [12.0]]
+	```
+    Should output: `[[0.0], [4.0], [8.0], [12.0]]`
+
+	```python
     print(4.0 * v)
-    # [[0.0], [4.0], [8.0], [12.0]]
+	```
+    Should output: `[[0.0], [4.0], [8.0], [12.0]]`
+
+	```python
     v * "hi"
-    # The error should be handled, it should say raise SomeError in the code or print a message and return None or exit().
-    ```
+	```
+
+    The error should be handled, it should say raise SomeError in the code or print a message or return None or exit().
+
+
 
 - **built-in method \_\_add\_\_, \_\_radd\_\_, \_\_sub\_\_ and \_\_rsub\_\_**\
   Verify the correct implementation of the built-in method \_\_add\_\_,
   \_\_radd\_\_, \_\_sub\_\_ and \_\_rsub\_\_ by performing several tests related
   to '+' and '-' operators:
-  For each test verify that the result of the operation is a vector object or a scalar,
-  and if it's value is correct.
-  The following lines of code should output the same as the #comment below it
     ```python
     v = Vector(4)
     v2 = Vector([[1.0], [1.0], [1.0], [1.0]])
     print((v + v2).values)
-    # [[1.0], [2.0], [3.0], [4.0]]
-
+	```
+    Should output: `[[1.0], [2.0], [3.0], [4.0]]`
+	```python
     v + Vector([0.0, 0.0, 0.0, 0.0])
-    # The error shoudl be handled in some way
+	```
+    The error shoudl be handled in some way
 
+	```python
     v + "hello"
-    # The error shoudl be handled in some way
+	```
+    The error shoudl be handled in some way
 
+	```python
     v + None
-    # The error shoudl be handled in some way
+	```
+    The error shoudl be handled in some way
 
+	```pyton
     print((v - v2).values == (v2 -v).values)
-    # True
-    ```
+	```
+    Should output: `True`
+
 
 - **built-in method \_\_div\_\_ and \_\_rdiv\_\_**\
   For division perform the following tests:
