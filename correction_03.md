@@ -358,6 +358,11 @@ These functions should all return None because of incorect parameters (*Nothing 
 
 ## Basic tests
 Test the different methods, by taking a .png image of your choice and applying the filters.   
+**The defendee may run ANY code he wishes to show the image effects to validate this excercise. This code is only meant to facilitate correction.**  
+Celluloid is poorly documented so it is considered optional. 
+
+<br>
+
 Copy this code into a file, replace `"<PATH_TO_THE_IMAGE>"` by the actual path to the image and run the file with python.
 ```python
 import numpy as np
@@ -381,7 +386,7 @@ plt.imshow(im, cmap="gray")
 plt.show()
 ```
 
-You should see a Red, Blue, Green, Inverted and Gray version of the image (**implementation for grayscale may vary, the defendee may change the arguments of the to_grayscale and imshow functions for the code to run**)   
+You should see a Red, Blue, Green, Inverted and Gray version of the image   
 **YOU HAVE TO CLOSE THE IMAGES THAT SHOW ON SCREEN FOR THE NEXT IMAGE TO SHOW**   
 
 <br>
