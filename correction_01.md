@@ -160,7 +160,7 @@ classes and the manipulation of the objects related to those classes.
 	b.add_recipe(crumble)
 	print(b.last_update)
 	```
-	Should be different than the previous one
+	Should be a different date / time than the one printed before
 	```python
 	b.get_recipe_by_name("Crumble")
 	# should print the recipe
@@ -324,17 +324,17 @@ their behaviors through the tests.
 	```python
     v + Vector([0.0, 0.0, 0.0, 0.0])
 	```
-    The error shoudl be handled in some way
+    The error should be handled in some way
 
 	```python
     v + "hello"
 	```
-    The error shoudl be handled in some way
+    The error should be handled in some way
 
 	```python
     v + None
 	```
-    The error shoudl be handled in some way
+    The error should be handled in some way
 
 	```pyton
     print((v - v2).values == (v2 -v).values)
@@ -440,16 +440,13 @@ In this exercise you learn how to modify or add attributes to an object.
 
     - Second, you have to perform the following test to verify the security
       management:
-      - `bank.add(account)`
-        where 'bank' is an instance of Bank and 'account1' is a instance of
-        Account which is considered as corrupted. Try several cases of corrupted
-        account:
-        ***if the Bank.add(account) funtion does not check for corrupted accounts simply verify that the function to check for corruption works***
+      - **For the following accounts ask the defendee to run his corruption detection function and then his fix_corrupted function** :
+	-  The following account is corrupted because it has an attribute that starts with b
         ```python
         from the_bank import Account, Bank
 
 		bank = Bank()
-		bank.add(Account(
+		john = Account(
 		'William John',
 		zip='100-064',
 		brother="heyhey",
@@ -459,12 +456,16 @@ In this exercise you learn how to modify or add attributes to an object.
 		other='This is the vice president of the corporation',
 		lol = "hihi"
 		))
-		print(bank.account)
-		# should print : []
-		# the account is invalid because it has an attribute that starts with b
+		```
+		```python
+		bank.fix_corrupted(jhon)
+		```
+		This should fix john OR return a fixed copy of john
 
-		bank = Bank()
-		bank.add(Account(
+
+	- The following account is corrupted because it has an even number of attributes.
+		```python
+		john = Account(
 		'William John',
 		zip='100-064',
 		rother="heyhey",
@@ -473,13 +474,11 @@ In this exercise you learn how to modify or add attributes to an object.
 		info=None,
 		other='This is the vice president of the corporation',
 		))
-		print(bank.account)
-		# should print : []
-		# the account is corrupted because it has an even number of attributes.
-
-
-		bank = Bank()
-		bank.add(Account(
+		```
+		
+	- The following account is corrupted because it has no attribute "value".
+		```python
+		john = Account(
 			'William John',
 			zip='100-064',
 			rother="heyhey",
@@ -488,11 +487,9 @@ In this exercise you learn how to modify or add attributes to an object.
 			other='This is the vice president of the corporation',
 			lol = "lolilol"
 			))
-		print(bank.account)
-		# should print : []
-		# the account is corrupted because it has no attribute "value".
+		```
 
-
+		```python
 		bank.add(Account(
 			'Jane',
 			zip='911-745',
@@ -509,17 +506,23 @@ In this exercise you learn how to modify or add attributes to an object.
 
 		print("\ntesting a valid transfer")
 		print(jhon.value)
-		# 1000.0
-
+		```
+		Should output `1000.0`
+		
+		```python
 		bank.transfer("Jane", "Jhon", 500)
 		print(jhon.value)
-		# 1500.0
+		```
+		Should output `1500.0`
 
+		```python
 		print("\ntesting an invalid transfer")
 		print(jhon.value)
-		# 1500.0
+		```
+		Should output `1500.0`
 
+		```python
 		bank.transfer("Jane", "Jhon", 1000)
 		print(jhon.value)
-		# 1500.0
         ```
+		Should output `1500.0`  OR Raise an Error
