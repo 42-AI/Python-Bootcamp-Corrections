@@ -380,7 +380,7 @@ plt.imshow(cf.to_grayscale(array, "w", weights = [0.2126, 0.7152, 0.0722]), cmap
 plt.show()
 ```
 
-You should see a Red, Blue, Green, Inverted and Gray version of the image (implementation for grayscale may vary, the defendee may change the imshow function)   
+You should see a Red, Blue, Green, Inverted and Gray version of the image (**implementation for grayscale may vary, the defendee may change the arguments of the to_grayscale and imshow functions for the code to run**)   
 **YOU HAVE TO CLOSE THE IMAGES THAT SHOW ON SCREEN FOR THE FOLLOWING TO SHOW**   
 
 <br>
