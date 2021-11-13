@@ -507,7 +507,7 @@ In this exercise you learn how to modify or add attributes to an object.
             zip='911-745',
             value=1000.0,
             ref='1044618427ff2782f0bbece0abd05f31'
-        )
+        ))
 
         jhon = Account(
             'Jhon',
