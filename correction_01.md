@@ -440,7 +440,7 @@ In this exercise you learn how to modify or add attributes to an object.
 
     - Second, you have to perform the following test to verify the security
       management:
-      - **For the following accounts ask the defendee to run his corruption detection function and then his fix_corrupted function** :
+      - **For the following accounts ask the defendee to run his corruption detection function** :
 	-  The following account is corrupted because it has an attribute that starts with b
         ```python
         from the_bank import Account, Bank
