@@ -464,7 +464,7 @@ In this exercise you learn how to modify or add attributes to an object.
 			info=None,
 			other='This is the vice president of the corporation',
 			lol = "hihi"
-			))
+		)
 		```
 		```python
 		bank.fix_corrupted(jhon)
@@ -482,7 +482,7 @@ In this exercise you learn how to modify or add attributes to an object.
 			ref='58ba2b9954cd278eda8a84147ca73c87',
 			info=None,
 			other='This is the vice president of the corporation',
-			))
+		)
 		```
 		
 	- The following account is corrupted because it has no attribute "value":
@@ -495,7 +495,7 @@ In this exercise you learn how to modify or add attributes to an object.
 			info=None,
 			other='This is the vice president of the corporation',
 			lol = "lolilol"
-			))
+		)
 		```
 
 	- **We will now test a bank transfer**
@@ -505,14 +505,14 @@ In this exercise you learn how to modify or add attributes to an object.
 			zip='911-745',
 			value=1000.0,
 			ref='1044618427ff2782f0bbece0abd05f31'
-			))
+		)
 
 		jhon = Account(
 			'Jhon',
 			zip='911-745',
 			value=1000.0,
 			ref='1044618427ff2782f0bbece0abd05f31'
-			)
+		)
 
 		bank.add(jhon)
 
