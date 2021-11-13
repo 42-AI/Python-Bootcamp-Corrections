@@ -467,9 +467,11 @@ In this exercise you learn how to modify or add attributes to an object.
 		)
 		```
 		```python
-		bank.fix_corrupted(jhon)
+		bank.fix_account(john)
+		# OR
+		bank.fix_account('William John')
 		```
-		This should fix john OR return a fixed copy of john
+		This should fix john **OR** return a fixed copy of john
 
 
 	- The following account is corrupted because it has an even number of attributes:
