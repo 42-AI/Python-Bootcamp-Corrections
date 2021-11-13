@@ -447,15 +447,15 @@ In this exercise you learn how to modify or add attributes to an object.
 
 		bank = Bank()
 		john = Account(
-		'William John',
-		zip='100-064',
-		brother="heyhey",
-		value=6460.0,
-		ref='58ba2b9954cd278eda8a84147ca73c87',
-		info=None,
-		other='This is the vice president of the corporation',
-		lol = "hihi"
-		))
+			'William John',
+			zip='100-064',
+			brother="heyhey",
+			value=6460.0,
+			ref='58ba2b9954cd278eda8a84147ca73c87',
+			info=None,
+			other='This is the vice president of the corporation',
+			lol = "hihi"
+			))
 		```
 		```python
 		bank.fix_corrupted(jhon)
@@ -466,14 +466,14 @@ In this exercise you learn how to modify or add attributes to an object.
 	- The following account is corrupted because it has an even number of attributes.
 		```python
 		john = Account(
-		'William John',
-		zip='100-064',
-		rother="heyhey",
-		value=6460.0,
-		ref='58ba2b9954cd278eda8a84147ca73c87',
-		info=None,
-		other='This is the vice president of the corporation',
-		))
+			'William John',
+			zip='100-064',
+			rother="heyhey",
+			value=6460.0,
+			ref='58ba2b9954cd278eda8a84147ca73c87',
+			info=None,
+			other='This is the vice president of the corporation',
+			))
 		```
 		
 	- The following account is corrupted because it has no attribute "value".
@@ -489,6 +489,7 @@ In this exercise you learn how to modify or add attributes to an object.
 			))
 		```
 
+	- We will now test bank transfers
 		```python
 		bank.add(Account(
 			'Jane',
@@ -496,15 +497,17 @@ In this exercise you learn how to modify or add attributes to an object.
 			value=1000.0,
 			ref='1044618427ff2782f0bbece0abd05f31'
 			))
+
 		jhon = Account(
 			'Jhon',
 			zip='911-745',
 			value=1000.0,
 			ref='1044618427ff2782f0bbece0abd05f31'
 			)
+
 		bank.add(jhon)
 
-		print("\ntesting a valid transfer")
+		print("testing a valid transfer")
 		print(jhon.value)
 		```
 		Should output `1000.0`
@@ -516,7 +519,7 @@ In this exercise you learn how to modify or add attributes to an object.
 		Should output `1500.0`
 
 		```python
-		print("\ntesting an invalid transfer")
+		print("testing an invalid transfer")
 		print(jhon.value)
 		```
 		Should output `1500.0`
