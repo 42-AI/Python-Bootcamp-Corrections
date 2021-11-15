@@ -218,10 +218,12 @@ and check that the format respects the following.
 
 ```python
 print(howManyMedalsByCountry(df, "United States") == {1896: {'G': 11, 'S': 7, 'B': 2}, 1900: {'G': 18, 'S': 14, 'B': 13}, 1904: {'G': 64, 'S': 67, 'B': 65}, 1906: {'G': 12, 'S': 6, 'B': 6}, 1908: {'G': 34, 'S': 16, 'B': 15}, 1912: {'G': 46, 'S': 25, 'B': 36}, 1920: {'G': 84, 'S': 41, 'B': 35}, 1924: {'G': 63, 'S': 40, 'B': 35}, 1928: {'G': 37, 'S': 21, 'B': 17}, 1932: {'G': 58, 'S': 56, 'B': 43}, 1936: {'G': 30, 'S': 29, 'B': 27}, 1948: {'G': 56, 'S': 34, 'B': 29}, 1952: {'G': 53, 'S': 38, 'B': 24}, 1956: {'G': 37, 'S': 55, 'B': 20}, 1960: {'G': 82, 'S': 27, 'B': 18}, 1964: {'G': 74, 'S': 35, 'B': 27}, 1968: {'G': 85, 'S': 35, 'B': 34}, 1972: {'G': 69, 'S': 58, 'B': 31}, 1976: {'G': 62, 'S': 41, 'B': 28}, 1980: {'G': 24, 'S': 4, 'B': 2}, 1984: {'G': 134, 'S': 68, 'B': 32}, 1988: {'G': 64, 'S': 43, 'B': 33}, 1992: {'G': 77, 'S': 39, 'B': 47}, 1994: {'G': 6, 'S': 8, 'B': 5}, 1996: {'G': 97, 'S': 38, 'B': 25}, 1998: {'G': 25, 'S': 2, 'B': 3}, 2000: {'G': 67, 'S': 29, 'B': 45}, 2002: {'G': 9, 'S': 52, 'B': 9}, 2004: {'G': 63, 'S': 64, 'B': 36}, 2006: {'G': 9, 'S': 7, 'B': 32}, 2008: {'G': 59, 'S': 58, 'B': 47}, 2010: {'G': 8, 'S': 61, 'B': 20}, 2012: {'G': 80, 'S': 44, 'B': 36}, 2014: {'G': 8, 'S': 28, 'B': 16}, 2016: {'G': 92, 'S': 51, 'B': 43}})
-
 ```
-Should output True
-
+Should output `True`
+**If the previous fails the defendee should use the following list for team sports**, If he does not filter for team sports, he failed the exercise.   
+```python
+team_sports = ['Basketball', 'Football',  'Tug-Of-War', 'Badminton', 'Sailing', 'Handball', 'Water Polo', 'Hockey', 'Rowing', 'Bobsleigh', 'Softball', 'Volleyball', 'Synchronized Swimming', 'Baseball', 'Rugby Sevens', 'Rugby', 'Lacrosse', 'Polo']
+```
 
 # Exercise 6 - MyPlotLib
 The goal the exercise is to introduce plotting methods among the different
