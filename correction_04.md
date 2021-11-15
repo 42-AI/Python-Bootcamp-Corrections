@@ -246,9 +246,10 @@ libraries Pandas, Matplotlib, Seaborn or Scipy.
 
 ## Basic tests'
 Verify you get the expected plots for each methods:
-- giving 'Age' and 'Medal' for the method compare_box_plots, you
+-
+- giving 'Medal' and 'Age' for the method compare_box_plots, you
   should observe 3 boxes: Bronze. Silver and Gold
-- giving 'Height' and 'Medal' for the method compare_histograms, you
-  should observe 3 curves on the histogram
-- giving 'Weight' and 'Medal' for the method density, you should
+- giving 'Medal' and 'Height' for the method compare_histograms, you
+  should observe 3 histograms
+- giving 'Medal' and 'Weight' for the method density, you should
   observe 3 curves of density plot
