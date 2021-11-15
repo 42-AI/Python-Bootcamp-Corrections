@@ -180,7 +180,7 @@ In this python interpretor, check if all the following cases have a correct beha
   ```python
   npc.random((3, 5))
   ```
-  Should output:   
+  Should output (*the values are random but th shape must be the same)*:   
   ```
   array([[0.74819604, 0.32295616, 0.27371925, 0.57171326, 0.92582071],
         [0.70307642, 0.94846695, 0.12465384, 0.25146454, 0.11179953],
