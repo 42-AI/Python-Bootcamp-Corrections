@@ -139,6 +139,14 @@ man who took part in the Olympics a given year.
     
 ## Basic tests'
 Check the results of the following cases:
+(Please adatp the file path in the load function)
+```python
+from FileLoader import FileLoader
+from YoungestFellah import youngestfellah
+loader = FileLoader()
+data = loader.load('<PATH_TO_CSV_FILE>')
+```
+
 - "youngestfellah(data, 1992)", output is: "{'f': 12.0, 'm': 11.0}"
 - "youngestfellah(data, 2004)", output is: "{'f': 13.0, 'm': 14.0}"
 - "youngestfellah(data, 2010)", output is: "{'f': 15.0, 'm': 15.0}"
@@ -156,7 +164,13 @@ of participants who played a given sport, among the participants of a given
 genders.
     
 ## Basic tests'
-Verify the results of the following cases:
+Verify the results of the following cases: (please adapt the path to csv file)
+```python
+from FileLoader import FileLoader
+from ProportionBySport import proportionBySport
+loader = FileLoader()
+data = loader.load('<PATH_TO_CSV_FILE>')
+```
 - "proportionBySport(data, 2004, 'Tennis', 'F')" , output is "0.02307"
 - "proportionBySport(data, 2008, 'Hockey', 'F')", output is  "0.03284"
 - "proportionBySport(data, 1964, 'Biathlon', 'M')", output is "0.00659"
@@ -172,8 +186,13 @@ The goal of this exercise is to code a function that will return
 a dictionary of dictionaries giving the number and type of medals
 for each year during which the participant won medals.
     
-## Basic tests'
-Verify the results of the following cases:
+## Basic tests
+Verify the results of the following cases: (Please adapt the path to csv file)
+```python
+import pandas as pd
+from HowManyMedals import howManyMedals
+data = pd.read_csv('<PATH_TO_CSV_FILE>')
+```
 - "howManyMedals(data, 'Gary Abraham')",
   the output is: "{1976: {'G': 0, 'S': 0, 'B': 0}, 1980: {'G': 0, 'S': 0, 'B': 1}}"
 - "howManyMedals(data, 'Yekaterina Konstantinovna Abramova')",
@@ -193,8 +212,14 @@ that takes a dataset (pandas.DataFrame) as argument in its constructor
 and implements two methods.
     
 
-## Basic tests'
-Check the result of the following cases:
+## Basic tests
+Check the result of the following cases: (please adapt path to csv file)
+```python
+import pandas as pd
+from SpationTemporalData import SpatioTemporalData
+df = pd.read_csv('<PATH_TO_CSV_FILE>)
+sp = SpatioTemporalData(df)
+```
 - "print(sp.where(2000))", output is: "['Sydney']"
 - "print(sp.where(1980))", output is: "['Lake Placid', 'Moskva']" If a single of these locations is returned it's ok.
 - "print(sp.when('London'))", output is: "[2012, 1948, 1908]"
@@ -211,12 +236,10 @@ each competition where the country delegation earned medals.
 
 ## Basic tests'
 Print the result of howManyMedalsByCountry functions calls with various countries
-and check that the format respects the following.
-```
-"{1952: {'G': 0, 'S': 0, 'B': 0}, 1956: {'G': 0, 'S': 0, 'B': 0}, 1960: {'G': 0, 'S': 0, 'B': 0}, 1964: {'G': 0, 'S': 0, 'B': 1}}"
-```
-
+and check that the format respects the following:
 ```python
+import pandas as pd
+from HowManyMedalsByCountry import howManyMedalsByCountry
 data = pandas.read_csv("PATH_TO_ATHLETES_CSV")
 print(howManyMedalsByCountry(data, "United States") == {1896: {'G': 11, 'S': 7, 'B': 2}, 1900: {'G': 18, 'S': 14, 'B': 13}, 1904: {'G': 64, 'S': 67, 'B': 65}, 1906: {'G': 12, 'S': 6, 'B': 6}, 1908: {'G': 34, 'S': 16, 'B': 15}, 1912: {'G': 46, 'S': 25, 'B': 36}, 1920: {'G': 84, 'S': 41, 'B': 35}, 1924: {'G': 63, 'S': 40, 'B': 35}, 1928: {'G': 37, 'S': 21, 'B': 17}, 1932: {'G': 58, 'S': 56, 'B': 43}, 1936: {'G': 30, 'S': 29, 'B': 27}, 1948: {'G': 56, 'S': 34, 'B': 29}, 1952: {'G': 53, 'S': 38, 'B': 24}, 1956: {'G': 37, 'S': 55, 'B': 20}, 1960: {'G': 82, 'S': 27, 'B': 18}, 1964: {'G': 74, 'S': 35, 'B': 27}, 1968: {'G': 85, 'S': 35, 'B': 34}, 1972: {'G': 69, 'S': 58, 'B': 31}, 1976: {'G': 62, 'S': 41, 'B': 28}, 1980: {'G': 24, 'S': 4, 'B': 2}, 1984: {'G': 134, 'S': 68, 'B': 32}, 1988: {'G': 64, 'S': 43, 'B': 33}, 1992: {'G': 77, 'S': 39, 'B': 47}, 1994: {'G': 6, 'S': 8, 'B': 5}, 1996: {'G': 97, 'S': 38, 'B': 25}, 1998: {'G': 25, 'S': 2, 'B': 3}, 2000: {'G': 67, 'S': 29, 'B': 45}, 2002: {'G': 9, 'S': 52, 'B': 9}, 2004: {'G': 63, 'S': 64, 'B': 36}, 2006: {'G': 9, 'S': 7, 'B': 32}, 2008: {'G': 59, 'S': 58, 'B': 47}, 2010: {'G': 8, 'S': 61, 'B': 20}, 2012: {'G': 80, 'S': 44, 'B': 36}, 2014: {'G': 8, 'S': 28, 'B': 16}, 2016: {'G': 92, 'S': 51, 'B': 43}})
 ```
