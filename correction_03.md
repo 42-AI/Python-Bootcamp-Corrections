@@ -363,7 +363,7 @@ Celluloid is poorly documented so it is considered optional.
 
 <br>
 
-Copy this code into a file, replace `"<PATH_TO_THE_IMAGE>"` by the actual path to the image and run the file with python.
+Copy this code into a file, replace `"<PATH_TO_THE_IMAGE>"` by the actual path to the image and run the file with python (if the image is not a true .png this will crash, run it with the elonGAN image).
 ```python
 import numpy as np
 import matplotlib
