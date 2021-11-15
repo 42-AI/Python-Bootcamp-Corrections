@@ -147,6 +147,9 @@ Check the results of the following cases:
 Odd years, years before 1952 and after 2008 must return nan for both gender or a similar result.
 If something does not match, the exercise is failed. 
 
+<br>
+<br>
+
 # Exercise 2 - ProportionBySport
 The goal of this exercise is to create a function displaying the proportion
 of participants who played a given sport, among the participants of a given
@@ -158,8 +161,11 @@ Verify the results of the following cases:
 - "proportionBySport(data, 2008, 'Hockey', 'F')", output is  "0.03284"
 - "proportionBySport(data, 1964, 'Biathlon', 'M')", output is "0.00659"
 
-*If you found 0.0193, 0.0414 and 0.0095 please contact jbarment on slack, a hasty correction is currenty happening and a mistake might be made*
+**The rounding of the result does no matter (0.023 or 0.02307969707897584 or 2.3 % are all acceptable**   
 If something does not match, the exercise is failed.
+
+<br>
+<br>
 
 # Exercise 3 - HowManyMedals
 The goal of this exercise is to code a function that will return
@@ -173,9 +179,12 @@ Verify the results of the following cases:
 - "howManyMedals(data, 'Yekaterina Konstantinovna Abramova')",
   the output is "{2006: {'G': 0, 'S': 0, 'B': 1}, 2010: {'G': 0, 'S': 0, 'B': 0}}"
 - "howManyMedals(data, 'Kristin Otto')",
-  the output is: "{1988: {'G': 6, 'S': 0, 'B': 1}}"
+  the output is: "{1988: {'G': 6, 'S': 0, 'B': 0}}"
 
 If something does not match, the exercise is failed. 
+
+<br>
+<br>
 
 
 # Exercise 4 - SpatioTemporalData
