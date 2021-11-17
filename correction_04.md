@@ -97,9 +97,10 @@ General rules
 # Exercise 0 - FileLoader
 The goal of this exercise is to create a Fileloader class containing a load and a display method.   
     
-put the csv file in the current directory
+put the path to the csv file in an environment variable
 
 ```bash
+export CSV_PATH="path_to_athletes_events.csv"
 python 3
 ```
 
@@ -108,10 +109,11 @@ python 3
 -  
   ```python
   from FileLoader import FileLoader
+  import os
 
   f = FileLoader()
 
-  df = f.load("./athlete_events.csv")
+  df = f.load(os.environ["CSV_PATH"])
   ```
   Should output (approximately) :
   ```python
@@ -179,14 +181,15 @@ man who took part in the Olympics a given year.
     
 ## Basic tests'
 Check the results of the following cases:   
-**Please put the file path in the load function.**   
-*The name of the function may be changed to make this code run*
+*The name of the function YoungestFellah may be changed to make this code run*
 
 ```python
 from FileLoader import FileLoader
 from YoungestFellah import youngestfellah
+import os
+
 loader = FileLoader()
-data = loader.load('<PATH_TO_CSV_FILE>')
+data = loader.load(os.environ["CSV_PATH"])
 
 
 youngestfellah(data, 1992)
@@ -216,9 +219,10 @@ Verify the results of the following cases: (please adapt the path to csv file)
 ```python
 from FileLoader import FileLoader
 from ProportionBySport import proportionBySport
+import os
 
 loader = FileLoader()
-data = loader.load('<PATH_TO_CSV_FILE>')
+data = loader.load(os.environ["CSV_PATH"])
 
 print("")
 
@@ -247,15 +251,17 @@ Verify the results of the following cases: (Please adapt the path to csv file)
 ```python
 import pandas as pd
 from HowManyMedals import howManyMedals
-data = pd.read_csv('<PATH_TO_CSV_FILE>')
+import os
 
-howManyMedals(data, 'Gary Abraham')
+data = pd.read_csv(os.environ["CSV_PATH"])
+
+print(howManyMedals(data, 'Gary Abraham'))
 #  the output is: "{1976: {'G': 0, 'S': 0, 'B': 0}, 1980: {'G': 0, 'S': 0, 'B': 1}}"
 
-howManyMedals(data, 'Yekaterina Konstantinovna Abramova')
+print(howManyMedals(data, 'Yekaterina Konstantinovna Abramova'))
 #  the output is "{2006: {'G': 0, 'S': 0, 'B': 1}, 2010: {'G': 0, 'S': 0, 'B': 0}}"
 
-howManyMedals(data, 'Kristin Otto')
+print(howManyMedals(data, 'Kristin Otto'))
 #  the output is: "{1988: {'G': 6, 'S': 0, 'B': 0}}"
 ```
 If something does not match, the exercise is failed. 
@@ -271,11 +277,13 @@ and implements two methods.
     
 
 ## Basic tests
-Check the result of the following cases: (please adapt path to csv file)
+Check the result of the following cases:
 ```python
 import pandas as pd
 from SpationTemporalData import SpatioTemporalData
-df = pd.read_csv('<PATH_TO_CSV_FILE>)
+import os
+
+df = pd.read_csv(os.environ["CSV_PATH"])
 sp = SpatioTemporalData(df)
 ```
 - "print(sp.where(2000))", output is: "['Sydney']"
@@ -298,7 +306,7 @@ and check that the format respects the following:
 ```python
 import pandas as pd
 from HowManyMedalsByCountry import howManyMedalsByCountry
-df = pd.read_csv("PATH_TO_ATHLETES_CSV")
+df = pd.read_csv(os.environ["CSV_PATH"])
 print(howManyMedalsByCountry(df, "United States") == {1896: {'G': 11, 'S': 7, 'B': 2}, 1900: {'G': 18, 'S': 14, 'B': 13}, 1904: {'G': 65, 'S': 68, 'B': 66}, 1906: {'G': 12, 'S': 6, 'B': 6}, 1908: {'G': 34, 'S': 16, 'B': 15}, 1912: {'G': 46, 'S': 25, 'B': 36}, 1920: {'G': 87, 'S': 41, 'B': 35}, 1924: {'G': 65, 'S': 41, 'B': 36}, 1928: {'G': 39, 'S': 22, 'B': 18}, 1932: {'G': 60, 'S': 57, 'B': 43}, 1936: {'G': 30, 'S': 29, 'B': 28}, 1948: {'G': 57, 'S': 34, 'B': 30}, 1952: {'G': 55, 'S': 38, 'B': 25}, 1956: {'G': 39, 'S': 57, 'B': 21}, 1960: {'G': 83, 'S': 27, 'B': 19}, 1964: {'G': 75, 'S': 36, 'B': 28}, 1968: {'G': 86, 'S': 36, 'B': 35}, 1972: {'G': 70, 'S': 58, 'B': 33}, 1976: {'G': 62, 'S': 46, 'B': 30}, 1980: {'G': 24, 'S': 4, 'B': 2}, 1984: {'G': 143, 'S': 75, 'B': 33}, 1988: {'G': 66, 'S': 48, 'B': 36}, 1992: {'G': 79, 'S': 46, 'B': 52}, 1994: {'G': 6, 'S': 8, 'B': 5}, 1996: {'G': 98, 'S': 41, 'B': 28}, 1998: {'G': 25, 'S': 2, 'B': 3}, 2000: {'G': 69, 'S': 34, 'B': 48}, 2002: {'G': 9, 'S': 52, 'B': 9}, 2004: {'G': 65, 'S': 66, 'B': 38}, 2006: {'G': 9, 'S': 7, 'B': 32}, 2008: {'G': 64, 'S': 61, 'B': 47}, 2010: {'G': 8, 'S': 61, 'B': 20}, 2012: {'G': 82, 'S': 44, 'B': 38}, 2014: {'G': 8, 'S': 28, 'B': 16}, 2016: {'G': 95, 'S': 52, 'B': 45}})
 ```
 Should output `True`
