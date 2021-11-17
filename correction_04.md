@@ -154,7 +154,7 @@ python 3
 -
   ```python
   f.display(df, 0)
-  # should display Nothing or the Header (column names of the)
+  # should display Nothing or the Header (column names of the dataframe)
   ```
 
 <br>
@@ -178,21 +178,29 @@ dictionary containing the age of the youngest woman and the youngest
 man who took part in the Olympics a given year.
     
 ## Basic tests'
-Check the results of the following cases:
-(Please adatp the file path in the load function)
+Check the results of the following cases:   
+**Please put the file path in the load function.**   
+*The name of the function may be changed to make this code run*
+
 ```python
 from FileLoader import FileLoader
 from YoungestFellah import youngestfellah
 loader = FileLoader()
 data = loader.load('<PATH_TO_CSV_FILE>')
+
+
+youngestfellah(data, 1992)
+# output is: "{'f': 12.0, 'm': 11.0}"
+
+youngestfellah(data, 2004)
+# output is: "{'f': 13.0, 'm': 14.0}"
+
+youngestfellah(data, 2010)
+# output is: "{'f': 15.0, 'm': 15.0}"
+
+youngestfellah(data, 2003)
+# output is: "{'f': nan, 'm': nan}"
 ```
-
-- "youngestfellah(data, 1992)", output is: "{'f': 12.0, 'm': 11.0}"
-- "youngestfellah(data, 2004)", output is: "{'f': 13.0, 'm': 14.0}"
-- "youngestfellah(data, 2010)", output is: "{'f': 15.0, 'm': 15.0}"
-- "youngestfellah(data, 2003)", output is: "{'f': nan, 'm': nan}"
-
-Odd years, years before 1952 and after 2008 must return nan for both gender or a similar result.
 If something does not match, the exercise is failed. 
 
 <br>
@@ -208,13 +216,21 @@ Verify the results of the following cases: (please adapt the path to csv file)
 ```python
 from FileLoader import FileLoader
 from ProportionBySport import proportionBySport
+
 loader = FileLoader()
 data = loader.load('<PATH_TO_CSV_FILE>')
-```
-- "proportionBySport(data, 2004, 'Tennis', 'F')" , output is "0.02307"
-- "proportionBySport(data, 2008, 'Hockey', 'F')", output is  "0.03284"
-- "proportionBySport(data, 1964, 'Biathlon', 'M')", output is "0.00659"
 
+print("")
+
+print(proportionBySport(data, 2004, 'Tennis', 'F'), end = "\n\n")
+# output is "0.02307"
+
+print(proportionBySport(data, 2008, 'Hockey', 'F'), end = "\n\n")
+# output is  "0.03284"
+
+print(proportionBySport(data, 1964, 'Biathlon', 'M'), end = "\n\n")
+# output is "0.00659"
+```
 **The rounding of the result does no matter (0.023 or 0.02307969707897584 or 2.3 % are all acceptable**   
 If something does not match, the exercise is failed.
 
@@ -232,14 +248,16 @@ Verify the results of the following cases: (Please adapt the path to csv file)
 import pandas as pd
 from HowManyMedals import howManyMedals
 data = pd.read_csv('<PATH_TO_CSV_FILE>')
-```
-- "howManyMedals(data, 'Gary Abraham')",
-  the output is: "{1976: {'G': 0, 'S': 0, 'B': 0}, 1980: {'G': 0, 'S': 0, 'B': 1}}"
-- "howManyMedals(data, 'Yekaterina Konstantinovna Abramova')",
-  the output is "{2006: {'G': 0, 'S': 0, 'B': 1}, 2010: {'G': 0, 'S': 0, 'B': 0}}"
-- "howManyMedals(data, 'Kristin Otto')",
-  the output is: "{1988: {'G': 6, 'S': 0, 'B': 0}}"
 
+howManyMedals(data, 'Gary Abraham')
+#  the output is: "{1976: {'G': 0, 'S': 0, 'B': 0}, 1980: {'G': 0, 'S': 0, 'B': 1}}"
+
+howManyMedals(data, 'Yekaterina Konstantinovna Abramova')
+#  the output is "{2006: {'G': 0, 'S': 0, 'B': 1}, 2010: {'G': 0, 'S': 0, 'B': 0}}"
+
+howManyMedals(data, 'Kristin Otto')
+#  the output is: "{1988: {'G': 6, 'S': 0, 'B': 0}}"
+```
 If something does not match, the exercise is failed. 
 
 <br>
