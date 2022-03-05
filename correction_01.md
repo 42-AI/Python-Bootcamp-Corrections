@@ -341,7 +341,7 @@ their behaviors through the tests.
     The error should be handled in some way
 
     ```pyton
-    print((v - v2).values == (v2 -v).values)
+    print((v - v2).values != (v2 - v).values)
     ```
     Should output: `True`
 
