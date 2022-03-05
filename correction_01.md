@@ -265,7 +265,7 @@ their behaviors through the tests.
     This is an error and should be properly handled by displaying an error message.
     
   - ```python
-    print(Vector((10, 12)).values )
+    print(Vector((10, 12)).values)
     ```
     Output: `[[10.0], [11.0]]`
 
@@ -282,7 +282,7 @@ their behaviors through the tests.
     raise an error or print `[]` or print `[[]]`
 
   - ```python
-    Vector((4, 7.1)) `:
+    Vector((4, 7.1)):
     ```
     This is an error and should be properly handled by displaying an
     error message.
