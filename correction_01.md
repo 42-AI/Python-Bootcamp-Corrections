@@ -157,7 +157,7 @@ classes and the manipulation of the objects related to those classes.
     ```                    
   - **get_recipe_by_name()** tests:
     ```python
-    crumble = Recipe("Crumble" , 1, 25, ["apples", "flour", "sugar"], "dessert" ,"delicious")
+    crumble = Recipe("Crumble" , 1, 25, ["apples", "flour", "sugar"], "delicious", "dessert")
     b.add_recipe(crumble)
     print(b.last_update)
     ```
