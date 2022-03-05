@@ -280,7 +280,7 @@ and implements two methods.
 Check the result of the following cases:
 ```python
 import pandas as pd
-from SpationTemporalData import SpatioTemporalData
+from SpatioTemporalData import SpatioTemporalData
 import os
 
 df = pd.read_csv(os.environ["CSV_PATH"])
